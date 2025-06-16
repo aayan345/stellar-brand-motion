@@ -21,7 +21,7 @@ const VideoSection = () => {
   }, []);
 
   return (
-    <section id="video-section" className="py-20 gradient-bg-primary text-white">
+    <section id="video-section" className="py-20 bg-gradient-to-br from-brand-red via-brand-red-light to-brand-red text-white">
       <div className="container mx-auto px-4">
         <div className={`text-center ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}>
           <h2 className="text-4xl lg:text-6xl font-bold mb-16">
@@ -41,8 +41,9 @@ const VideoSection = () => {
                       <path d="M8 5v14l11-7z"/>
                     </svg>
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">Come Gestire le Scarpe Antinfortunistiche</h3>
-                  <p className="text-gray-300">Manuel Villanova - Esperto di Sicurezza</p>
+                  <h3 className="text-xl font-semibold mb-2 text-yellow-400">CALZATURE</h3>
+                  <h4 className="text-2xl font-bold mb-2">SICURE</h4>
+                  <p className="text-lg">AZIENDE FELICI</p>
                 </div>
                 
                 {/* YouTube Branding */}

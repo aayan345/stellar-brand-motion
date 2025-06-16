@@ -88,47 +88,7 @@
   }
   body {
     @apply bg-background text-foreground;
-    cursor: none;
   }
-}
-
-/* Custom Cursor - Arrow Shape */
-.custom-cursor-arrow {
-  position: fixed;
-  width: 24px;
-  height: 24px;
-  pointer-events: none;
-  z-index: 9999;
-  transition: all 0.1s ease;
-  color: #C41E3A;
-  transform: rotate(-45deg);
-}
-
-.custom-cursor-follower {
-  position: fixed;
-  width: 40px;
-  height: 40px;
-  border: 2px solid rgba(196, 30, 58, 0.3);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9998;
-  transition: all 0.15s ease;
-}
-
-.custom-cursor-arrow.hover {
-  transform: rotate(-45deg) scale(1.5);
-  color: rgba(196, 30, 58, 0.8);
-}
-
-.custom-cursor-follower.hover {
-  transform: scale(1.2);
-  border-color: rgba(196, 30, 58, 0.6);
-  background: rgba(196, 30, 58, 0.1);
-}
-
-/* Hide default cursor */
-* {
-  cursor: none !important;
 }
 
 /* Brand Colors */

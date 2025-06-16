@@ -1,13 +1,10 @@
 
-import CustomCursor from '../components/CustomCursor';
 import HeroSection from '../components/HeroSection';
-import LogosSection from '../components/LogosSection';
-import AboutSection from '../components/AboutSection';
+import HSEManagementSection from '../components/HSEManagementSection';
 import OnePlatformSection from '../components/OnePlatformSection';
 import InspectionSection from '../components/InspectionSection';
 import HowItWorksSection from '../components/HowItWorksSection';
 import PricingCTASection from '../components/PricingCTASection';
-import TestimonialsSection from '../components/TestimonialsSection';
 import VideoSection from '../components/VideoSection';
 import ContactFormSection from '../components/ContactFormSection';
 import { Link } from 'react-router-dom';
@@ -15,8 +12,6 @@ import { Link } from 'react-router-dom';
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <CustomCursor />
-      
       {/* Enhanced Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white bg-opacity-95 backdrop-blur-md border-b border-gray-200 shadow-lg">
         <div className="container mx-auto px-4">
@@ -57,25 +52,17 @@ const Index = () => {
       {/* Main Content */}
       <main>
         <HeroSection />
-        <LogosSection />
-        <AboutSection />
+        <HSEManagementSection />
         <OnePlatformSection />
         <InspectionSection />
         <HowItWorksSection />
         <PricingCTASection />
-        <TestimonialsSection />
         <VideoSection />
         <ContactFormSection />
       </main>
 
       {/* Enhanced Footer */}
-      <footer className="bg-gradient-to-br from-gray-100 via-gray-50 to-white text-gray-800 py-20 relative overflow-hidden border-t border-gray-200">
-        {/* Background Effects */}
-        <div className="absolute inset-0">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-brand-red opacity-5 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-500 opacity-5 rounded-full blur-3xl"></div>
-        </div>
-
+      <footer className="bg-white text-gray-800 py-20 relative overflow-hidden border-t border-gray-200">
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
             {/* Company Info */}
