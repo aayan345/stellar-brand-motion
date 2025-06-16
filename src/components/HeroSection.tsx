@@ -36,33 +36,26 @@ const HeroSection = () => {
               <span>🔒 Soluzione Completa per la Sicurezza Aziendale</span>
             </div>
             
-            {/* Enhanced Heading */}
+            {/* Updated Heading */}
             <div className="space-y-4">
-              <h1 className="text-6xl lg:text-7xl font-black text-gray-900 leading-none">
+              <h1 className="text-5xl lg:text-6xl font-black text-gray-900 leading-tight">
+                <span className="block">
+                  Tutela impresa <span className="text-brand-red">100%</span>
+                </span>
                 <span className="block">
                   <span className="gradient-text bg-gradient-to-r from-brand-red via-brand-red-light to-brand-red bg-clip-text text-transparent">
-                    Tutela
+                    SICUREZZA
                   </span>
                 </span>
-                <span className="block text-gray-800 mt-2">Impresa</span>
+                <span className="block text-gray-800">AZIENDALE</span>
+                <span className="block text-lg font-normal text-gray-600 mt-4">sempre sotto controllo</span>
               </h1>
-              
-              <div className="relative">
-                <h2 className="text-3xl lg:text-4xl font-bold text-gray-700 leading-tight">
-                  La tua sicurezza aziendale<br />
-                  <span className="relative inline-block">
-                    <span className="gradient-text bg-gradient-to-r from-brand-red to-brand-red-light bg-clip-text text-transparent">
-                      sempre sotto controllo
-                    </span>
-                    <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-brand-red to-brand-red-light rounded-full transform scale-x-0 animate-[scale-x_1s_ease-out_0.5s_forwards]"></div>
-                  </span>
-                </h2>
-              </div>
             </div>
             
             <p className="text-xl text-gray-600 leading-relaxed max-w-xl font-medium">
-              Gestisci tutti gli aspetti della sicurezza aziendale con una piattaforma moderna, 
-              intuitiva e conforme alle normative vigenti. <span className="text-brand-red font-semibold">Protezione totale garantita.</span>
+              Gestisci tutti gli aspetti della sicurezza aziendale con una 
+              piattaforma moderna, intuitiva e conforme alle normative 
+              vigenti. <span className="text-brand-red font-semibold">Protezione totale garantita.</span>
             </p>
           </div>
           
@@ -71,14 +64,14 @@ const HeroSection = () => {
             <button className="group relative bg-gradient-to-r from-brand-red to-brand-red-light text-white px-10 py-5 rounded-2xl font-bold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-brand-red-light to-brand-red opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <span className="relative z-10 flex items-center space-x-2">
-                <span>🚀 Inizia Gratis</span>
+                <span>Richiedi Demo</span>
               </span>
             </button>
             
             <button className="group border-3 border-brand-red text-brand-red px-10 py-5 rounded-2xl font-bold text-lg hover:bg-brand-red hover:text-white transition-all duration-500 transform hover:scale-105 relative overflow-hidden">
               <div className="absolute inset-0 bg-brand-red transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
               <span className="relative z-10 flex items-center space-x-2">
-                <span>📹 Richiedi Demo</span>
+                <span>Accesso Cliente</span>
               </span>
             </button>
           </div>
@@ -86,16 +79,16 @@ const HeroSection = () => {
           {/* Enhanced Stats */}
           <div className="grid grid-cols-3 gap-8 pt-12">
             <div className="text-center group">
-              <div className="text-4xl font-black text-brand-red mb-2 group-hover:scale-110 transition-transform duration-300">10K+</div>
-              <div className="text-gray-600 text-sm font-semibold">Aziende Clienti</div>
+              <div className="text-4xl font-black text-brand-red mb-2 group-hover:scale-110 transition-transform duration-300">1K</div>
+              <div className="text-gray-600 text-sm font-semibold">Clienti</div>
             </div>
             <div className="text-center group">
-              <div className="text-4xl font-black text-brand-red mb-2 group-hover:scale-110 transition-transform duration-300">99.9%</div>
-              <div className="text-gray-600 text-sm font-semibold">Uptime Garantito</div>
+              <div className="text-4xl font-black text-brand-red mb-2 group-hover:scale-110 transition-transform duration-300">100%</div>
+              <div className="text-gray-600 text-sm font-semibold">disponibile sicurezza garantita</div>
             </div>
             <div className="text-center group">
               <div className="text-4xl font-black text-brand-red mb-2 group-hover:scale-110 transition-transform duration-300">24/7</div>
-              <div className="text-gray-600 text-sm font-semibold">Supporto Premium</div>
+              <div className="text-gray-600 text-sm font-semibold">Conformità garantita</div>
             </div>
           </div>
         </div>
