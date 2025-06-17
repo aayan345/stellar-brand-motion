@@ -7,7 +7,7 @@ const Sectors = () => {
       image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
       features: ["Gestione macchine e impianti", "DPI e formazione operatori", "Controllo sostanze chimiche", "Audit di sicurezza"],
       icon: "🏭",
-      color: "from-blue-500 to-blue-600"
+      color: "from-brand-red to-brand-red-light"
     },
     {
       title: "Edilizia",
@@ -15,7 +15,7 @@ const Sectors = () => {
       image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
       features: ["POS e PSC digitali", "Gestione ponteggi e DPI", "Coordinamento CSP/CSE", "Formazione cantieristi"],
       icon: "🏗️",
-      color: "from-orange-500 to-orange-600"
+      color: "from-brand-red to-brand-red-light"
     },
     {
       title: "Alimentare",
@@ -23,7 +23,7 @@ const Sectors = () => {
       image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
       features: ["Sistema HACCP digitale", "Controllo temperature", "Gestione allergeni", "Audit BRC/IFS"],
       icon: "🍽️",
-      color: "from-green-500 to-green-600"
+      color: "from-brand-red to-brand-red-light"
     },
     {
       title: "Chimico",
@@ -31,7 +31,7 @@ const Sectors = () => {
       image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
       features: ["Registro sostanze chimiche", "Schede di sicurezza SDS", "Piani di emergenza", "Monitoraggio esposizioni"],
       icon: "⚗️",
-      color: "from-purple-500 to-purple-600"
+      color: "from-brand-red to-brand-red-light"
     },
     {
       title: "Servizi",
@@ -39,7 +39,7 @@ const Sectors = () => {
       image: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
       features: ["DVR per uffici", "Gestione stress lavoro", "Formazione digitale", "Sorveglianza sanitaria"],
       icon: "💼",
-      color: "from-indigo-500 to-indigo-600"
+      color: "from-brand-red to-brand-red-light"
     },
     {
       title: "Trasporti",
@@ -47,32 +47,36 @@ const Sectors = () => {
       image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
       features: ["Gestione autisti", "Controlli tecnici mezzi", "ADR e merci pericolose", "Tachigrafi digitali"],
       icon: "🚛",
-      color: "from-red-500 to-red-600"
+      color: "from-brand-red to-brand-red-light"
     }
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
-      {/* Hero Section */}
+      {/* Enhanced Hero Section */}
       <section className="pt-32 pb-20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 right-20 w-64 h-64 bg-brand-red rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 left-20 w-48 h-48 bg-brand-red rounded-full blur-2xl"></div>
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_30%,rgba(196,30,58,0.06)_0%,transparent_50%)]"></div>
+          <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_80%_70%,rgba(224,53,85,0.04)_0%,transparent_50%)]"></div>
+          <div className="absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-brand-red/5 to-transparent rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 left-20 w-80 h-80 bg-gradient-to-br from-brand-red-light/5 to-transparent rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center space-x-2 bg-brand-red text-white px-6 py-3 rounded-full text-sm font-semibold mb-8">
+            <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-brand-red to-brand-red-light text-white px-10 py-5 rounded-full text-lg font-bold mb-10 shadow-2xl transform hover:scale-105 transition-all duration-300">
+              <div className="w-4 h-4 bg-white rounded-full animate-pulse"></div>
               <span>🏢 Settori di Attività</span>
             </div>
-            <h1 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900">
+            <h1 className="text-7xl lg:text-9xl font-black mb-10 text-gray-900 leading-tight">
               Soluzioni su misura per
               <br />
-              <span className="gradient-text bg-gradient-to-r from-brand-red via-brand-red-light to-brand-red bg-clip-text text-transparent">
+              <span className="relative gradient-text bg-gradient-to-r from-brand-red via-brand-red-light to-brand-red bg-clip-text text-transparent">
                 ogni settore
+                <div className="absolute -bottom-6 left-0 right-0 h-4 bg-gradient-to-r from-brand-red/20 via-brand-red-light/30 to-brand-red/20 rounded-full blur-sm"></div>
               </span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-3xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
               Expertise specializzata e soluzioni personalizzate per rispondere alle specifiche esigenze di sicurezza del tuo settore
             </p>
           </div>
@@ -145,7 +149,7 @@ const Sectors = () => {
 
           <div className="grid md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <div className="w-20 h-20 bg-gradient-to-r from-brand-red to-brand-red-light rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <span className="text-white text-3xl font-bold">50M+</span>
               </div>
               <h3 className="text-lg font-bold text-gray-800 mb-2">Dipendenti Protetti</h3>
@@ -153,7 +157,7 @@ const Sectors = () => {
             </div>
 
             <div className="text-center">
-              <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <div className="w-20 h-20 bg-gradient-to-r from-brand-red to-brand-red-light rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <span className="text-white text-3xl font-bold">99.9%</span>
               </div>
               <h3 className="text-lg font-bold text-gray-800 mb-2">Uptime Garantito</h3>
@@ -161,7 +165,7 @@ const Sectors = () => {
             </div>
 
             <div className="text-center">
-              <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <div className="w-20 h-20 bg-gradient-to-r from-brand-red to-brand-red-light rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <span className="text-white text-3xl font-bold">24/7</span>
               </div>
               <h3 className="text-lg font-bold text-gray-800 mb-2">Supporto Tecnico</h3>

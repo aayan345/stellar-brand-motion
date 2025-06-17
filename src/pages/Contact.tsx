@@ -2,28 +2,30 @@
 const Contact = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-red-50">
-      {/* Premium Hero Section */}
+      {/* Enhanced Hero Section */}
       <section className="pt-32 pb-20 relative overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_30%,rgba(196,30,58,0.1)_0%,transparent_50%)]"></div>
-          <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_80%_70%,rgba(224,53,85,0.1)_0%,transparent_50%)]"></div>
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_30%,rgba(196,30,58,0.08)_0%,transparent_50%)]"></div>
+          <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_80%_70%,rgba(224,53,85,0.06)_0%,transparent_50%)]"></div>
+          <div className="absolute top-20 right-20 w-96 h-96 bg-gradient-to-br from-brand-red/5 to-transparent rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 left-20 w-80 h-80 bg-gradient-to-br from-brand-red-light/5 to-transparent rounded-full blur-3xl"></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-brand-red to-brand-red-light text-white px-8 py-4 rounded-full text-sm font-bold mb-8 shadow-xl">
-              <div className="w-3 h-3 bg-white rounded-full animate-pulse"></div>
+            <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-brand-red to-brand-red-light text-white px-10 py-5 rounded-full text-lg font-bold mb-10 shadow-2xl transform hover:scale-105 transition-all duration-300">
+              <div className="w-4 h-4 bg-white rounded-full animate-pulse"></div>
               <span>📞 Contattaci Ora</span>
             </div>
-            <h1 className="text-6xl lg:text-8xl font-black mb-8 text-gray-900 leading-tight">
+            <h1 className="text-7xl lg:text-9xl font-black mb-10 text-gray-900 leading-tight">
               Parliamo della tua
               <br />
-              <span className="relative gradient-text bg-gradient-to-r from-brand-red to-brand-red-light bg-clip-text text-transparent">
+              <span className="relative gradient-text bg-gradient-to-r from-brand-red via-brand-red-light to-brand-red bg-clip-text text-transparent">
                 sicurezza aziendale
-                <div className="absolute -bottom-4 left-0 right-0 h-3 bg-gradient-to-r from-brand-red/30 to-brand-red-light/30 rounded-full"></div>
+                <div className="absolute -bottom-6 left-0 right-0 h-4 bg-gradient-to-r from-brand-red/20 via-brand-red-light/30 to-brand-red/20 rounded-full blur-sm"></div>
               </span>
             </h1>
-            <p className="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
+            <p className="text-3xl text-gray-600 max-w-5xl mx-auto leading-relaxed font-light">
               Il nostro team di esperti è pronto ad aiutarti a trasformare la gestione della sicurezza nella tua azienda con soluzioni innovative e personalizzate
             </p>
           </div>
