@@ -1,159 +1,165 @@
 
-import CustomCursor from '../components/CustomCursor';
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
-
 const FAQ = () => {
-  const [openItem, setOpenItem] = useState<number | null>(null);
-
   const faqs = [
     {
-      question: "Cos'è Tutela Impresa e come funziona?",
-      answer: "Tutela Impresa è una piattaforma digitale completa per la gestione della sicurezza aziendale. Centralizza tutti i documenti, le scadenze, la formazione del personale e i report di conformità in un'unica soluzione cloud-based accessibile 24/7."
+      category: "Generale",
+      questions: [
+        {
+          question: "Cos'è Tutela Impresa e come può aiutare la mia azienda?",
+          answer: "Tutela Impresa è una piattaforma digitale completa per la gestione della sicurezza aziendale e della conformità normativa. Ti aiutiamo a digitalizzare tutti i processi HSE, gestire documenti, monitorare scadenze, formare il personale e mantenere la conformità alle normative vigenti, tutto in un'unica soluzione integrata."
+        },
+        {
+          question: "Per quale tipo di aziende è adatta la vostra soluzione?",
+          answer: "La nostra piattaforma è progettata per aziende di ogni dimensione e settore. Dal piccolo artigiano alla grande multinazionale, da manifatturiero a servizi, edilizia, alimentare e chimico. Il sistema si adatta alle specifiche esigenze di ogni realtà aziendale."
+        },
+        {
+          question: "Quanto tempo serve per implementare il sistema?",
+          answer: "L'implementazione base può essere completata in 24-48 ore. Il nostro team ti assiste nell'onboarding con formazione dedicata, migrazione dei dati esistenti e configurazione personalizzata. In una settimana la tua azienda sarà operativa al 100%."
+        }
+      ]
     },
     {
-      question: "Quanto tempo ci vuole per implementare la piattaforma?",
-      answer: "L'implementazione di base richiede solo 24-48 ore. Il nostro team di esperti ti assiste nella configurazione iniziale, nel caricamento dei documenti esistenti e nella formazione del tuo team. Puoi iniziare a utilizzare le funzionalità principali immediatamente."
+      category: "Funzionalità",
+      questions: [
+        {
+          question: "Quali documenti posso gestire con la piattaforma?",
+          answer: "Puoi gestire tutti i documenti HSE: DVR, POS, certificati di formazione, attestati medici, certificazioni impianti, schede di sicurezza, procedure operative, verbali di riunione, rapporti di audit e molto altro. Il sistema supporta ogni tipo di file e ne facilita la ricerca e l'organizzazione."
+        },
+        {
+          question: "Come funziona il sistema di alert e notifiche?",
+          answer: "Il sistema monitora automaticamente tutte le scadenze e ti invia notifiche personalizzabili via email, SMS o attraverso la dashboard. Puoi impostare promemoria con anticipo variabile (30, 60, 90 giorni) per non perdere mai una scadenza importante."
+        },
+        {
+          question: "Posso accedere alla piattaforma da mobile?",
+          answer: "Assolutamente sì! La piattaforma è completamente responsive e ottimizzata per tutti i dispositivi. Puoi accedere da smartphone, tablet o computer, sempre con la stessa esperienza utente fluida e tutte le funzionalità disponibili."
+        }
+      ]
     },
     {
-      question: "La piattaforma è conforme al GDPR e alle normative italiane?",
-      answer: "Assolutamente sì. Tutela Impresa è progettata per essere completamente conforme al GDPR, alle normative italiane sulla sicurezza sul lavoro (D.Lgs. 81/08) e agli standard internazionali ISO 27001. Tutti i dati sono crittografati e ospitati su server sicuri in Europa."
+      category: "Sicurezza & Privacy",
+      questions: [
+        {
+          question: "I miei dati sono al sicuro?",
+          answer: "La sicurezza è la nostra priorità assoluta. Utilizziamo crittografia SSL 256-bit, server certificati ISO 27001 in Europa, backup ridondanti e accessi controllati. I tuoi dati sono protetti secondo i più alti standard di sicurezza internazionali e rimangono sempre di tua proprietà."
+        },
+        {
+          question: "Siete conformi al GDPR?",
+          answer: "Sì, siamo completamente conformi al GDPR e a tutte le normative europee sulla privacy. Abbiamo implementato misure tecniche e organizzative appropriate per garantire la protezione dei dati personali e il rispetto di tutti i diritti degli interessati."
+        },
+        {
+          question: "Dove sono ospitati i dati?",
+          answer: "Tutti i dati sono ospitati su server certificati situati nell'Unione Europea, garantendo il rispetto delle normative europee. Utilizziamo data center di livello enterprise con ridondanza geografica e backup automatici."
+        }
+      ]
     },
     {
-      question: "Posso integrare Tutela Impresa con i miei sistemi esistenti?",
-      answer: "Sì, la piattaforma offre API aperte e integrazioni native con i principali software HR, ERP e di gestione aziendale. Il nostro team tecnico può assistere nell'integrazione con i tuoi sistemi esistenti per garantire un flusso di lavoro fluido."
-    },
-    {
-      question: "Che tipo di supporto è disponibile?",
-      answer: "Offriamo supporto multicanale 24/7 tramite chat, email e telefono. Ogni cliente ha accesso a un Customer Success Manager dedicato, webinar di formazione regolari e una libreria completa di risorse e guide."
-    },
-    {
-      question: "Quali sono i costi e i piani disponibili?",
-      answer: "Offriamo piani flessibili basati sul numero di dipendenti e sulle funzionalità richieste. Tutti i piani includono una prova gratuita di 30 giorni, setup gratuito e supporto completo. Contattaci per un preventivo personalizzato."
-    },
-    {
-      question: "Come viene garantita la sicurezza dei dati?",
-      answer: "Utilizziamo crittografia AES-256, autenticazione a due fattori, backup automatici giornalieri e monitoraggio continuo della sicurezza. I nostri data center sono certificati ISO 27001 e SOC 2 Type II."
-    },
-    {
-      question: "Posso accedere alla piattaforma da dispositivi mobili?",
-      answer: "Sì, Tutela Impresa è completamente responsive e ottimizzata per tutti i dispositivi. Inoltre, stiamo sviluppando app native iOS e Android che saranno disponibili nel 2024."
-    },
-    {
-      question: "Cosa succede se ho bisogno di funzionalità personalizzate?",
-      answer: "La nostra piattaforma è altamente personalizzabile. Possiamo sviluppare funzionalità su misura per le tue esigenze specifiche, integrazioni custom e workflow personalizzati. Contatta il nostro team per discutere le tue necessità."
-    },
-    {
-      question: "Come posso migrare i miei dati esistenti?",
-      answer: "Il nostro team di onboarding ti assiste gratuitamente nella migrazione di tutti i tuoi dati esistenti. Supportiamo l'importazione da Excel, sistemi legacy e altri software di gestione. Il processo è sicuro e senza interruzioni operative."
+      category: "Prezzi & Supporto",
+      questions: [
+        {
+          question: "Quanto costa il servizio?",
+          answer: "I nostri piani partono dal costo di un cappuccino al giorno. Offriamo diverse soluzioni scalabili in base alle dimensioni aziendali e alle funzionalità richieste. Contattaci per un preventivo personalizzato e scopri le promozioni attive."
+        },
+        {
+          question: "C'è un periodo di prova gratuito?",
+          answer: "Sì! Offriamo 30 giorni di prova gratuita senza impegni. Potrai testare tutte le funzionalità della piattaforma con il supporto completo del nostro team. Nessun vincolo contrattuale, puoi disdire in qualsiasi momento."
+        },
+        {
+          question: "Che tipo di supporto offrite?",
+          answer: "Forniamo supporto multicanale: chat online, telefono, email e videochiamate. Il nostro team di esperti HSE è disponibile durante l'orario lavorativo per assistenza tecnica, consulenza normativa e formazione. Per i clienti premium offriamo anche supporto 24/7."
+        }
+      ]
     }
   ];
 
-  const toggleItem = (index: number) => {
-    setOpenItem(openItem === index ? null : index);
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
-      <CustomCursor />
-      
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white bg-opacity-95 backdrop-blur-md border-b border-gray-200 shadow-lg">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-20">
-            <Link to="/" className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-r from-brand-red to-brand-red-light rounded-2xl flex items-center justify-center shadow-lg">
-                <span className="text-white font-black text-lg">TI</span>
-              </div>
-              <div className="text-left">
-                <span className="font-black text-2xl text-gray-800 block leading-none">TUTELA</span>
-                <span className="font-black text-xl text-brand-red block leading-none">IMPRESA</span>
-              </div>
-            </Link>
-            
-            <div className="hidden md:flex items-center space-x-8">
-              <Link to="/functionality" className="text-gray-700 hover:text-brand-red transition-colors font-semibold">Funzionalità</Link>
-              <Link to="/sectors" className="text-gray-700 hover:text-brand-red transition-colors font-semibold">Settori</Link>
-              <Link to="/blog" className="text-gray-700 hover:text-brand-red transition-colors font-semibold">Blog</Link>
-              <Link to="/faq" className="text-brand-red font-semibold">FAQ</Link>
-              <Link to="/contact" className="text-gray-700 hover:text-brand-red transition-colors font-semibold">Contatti</Link>
-              <button className="bg-gradient-to-r from-brand-red to-brand-red-light text-white px-8 py-3 rounded-xl font-bold hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                Richiedi la Demo
-              </button>
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-20 right-20 w-64 h-64 bg-brand-red rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 left-20 w-48 h-48 bg-brand-red rounded-full blur-2xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center space-x-2 bg-brand-red text-white px-6 py-3 rounded-full text-sm font-semibold mb-8">
+              <span>❓ Domande Frequenti</span>
             </div>
+            <h1 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900">
+              Tutte le risposte che
+              <br />
+              <span className="gradient-text bg-gradient-to-r from-brand-red via-brand-red-light to-brand-red bg-clip-text text-transparent">
+                stavi cercando
+              </span>
+            </h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              Abbiamo raccolto le domande più frequenti dei nostri clienti per aiutarti a comprendere meglio la nostra soluzione
+            </p>
           </div>
         </div>
-      </nav>
+      </section>
 
-      {/* Main Content */}
-      <main className="pt-32 pb-20">
+      {/* FAQ Sections */}
+      <section className="py-20">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            {/* Header */}
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center space-x-2 bg-brand-red text-white px-6 py-3 rounded-full text-sm font-semibold mb-8">
-                <span>❓ Domande Frequenti</span>
-              </div>
-              <h1 className="text-5xl lg:text-6xl font-black mb-6">
-                Tutto quello che devi sapere su 
-                <br />
-                <span className="gradient-text bg-gradient-to-r from-brand-red via-brand-red-light to-brand-red bg-clip-text text-transparent">
-                  Tutela Impresa
-                </span>
-              </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Trova risposte alle domande più comuni sulla nostra piattaforma di sicurezza aziendale.
-              </p>
-            </div>
-
-            {/* FAQ Accordion */}
-            <div className="space-y-4">
-              {faqs.map((faq, index) => (
-                <div key={index} className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-                  <button
-                    onClick={() => toggleItem(index)}
-                    className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-all duration-300"
-                  >
-                    <h3 className="text-lg font-bold text-gray-800 pr-4">
-                      {faq.question}
-                    </h3>
-                    <div className={`w-8 h-8 bg-brand-red rounded-full flex items-center justify-center text-white font-bold transform transition-transform duration-300 ${openItem === index ? 'rotate-45' : ''}`}>
-                      +
-                    </div>
-                  </button>
-                  
-                  <div className={`overflow-hidden transition-all duration-300 ${openItem === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
-                    <div className="px-8 pb-6">
-                      <p className="text-gray-600 leading-relaxed">
-                        {faq.answer}
-                      </p>
-                    </div>
+          <div className="max-w-4xl mx-auto space-y-12">
+            {faqs.map((category, categoryIndex) => (
+              <div key={categoryIndex} className="bg-white rounded-3xl p-8 shadow-xl border border-gray-100">
+                <h2 className="text-2xl font-bold text-gray-800 mb-8 pb-4 border-b border-gray-200 flex items-center">
+                  <div className="w-8 h-8 bg-gradient-to-r from-brand-red to-brand-red-light rounded-lg flex items-center justify-center mr-4">
+                    <span className="text-white font-bold text-sm">{categoryIndex + 1}</span>
                   </div>
+                  {category.category}
+                </h2>
+                
+                <div className="space-y-6">
+                  {category.questions.map((faq, faqIndex) => (
+                    <details 
+                      key={faqIndex} 
+                      className="group bg-gray-50 rounded-2xl p-6 hover:bg-gray-100 transition-all duration-300"
+                    >
+                      <summary className="flex justify-between items-center cursor-pointer list-none">
+                        <h3 className="text-lg font-semibold text-gray-800 pr-4">
+                          {faq.question}
+                        </h3>
+                        <div className="w-8 h-8 bg-brand-red rounded-full flex items-center justify-center flex-shrink-0 group-open:rotate-45 transition-transform duration-300">
+                          <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                          </svg>
+                        </div>
+                      </summary>
+                      <div className="mt-6 pt-6 border-t border-gray-200">
+                        <p className="text-gray-600 leading-relaxed">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    </details>
+                  ))}
                 </div>
-              ))}
-            </div>
-
-            {/* Contact CTA */}
-            <div className="mt-16 bg-gradient-to-br from-brand-red to-brand-red-light rounded-3xl p-12 text-white text-center">
-              <h3 className="text-3xl font-black mb-4">Non trovi la risposta che cerchi?</h3>
-              <p className="text-xl mb-8 opacity-90">
-                Il nostro team di esperti è sempre disponibile per rispondere alle tue domande specifiche.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link 
-                  to="/contact"
-                  className="bg-white text-brand-red px-8 py-4 rounded-xl font-bold text-lg hover:shadow-lg transition-all duration-300 transform hover:scale-105 inline-block"
-                >
-                  Contattaci →
-                </Link>
-                <button className="border-2 border-white text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:text-brand-red transition-all duration-300 transform hover:scale-105">
-                  Richiedi Demo
-                </button>
               </div>
-            </div>
+            ))}
           </div>
         </div>
-      </main>
+      </section>
+
+      {/* Contact CTA */}
+      <section className="py-20 bg-gradient-to-r from-brand-red to-brand-red-light text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold mb-6">Non hai trovato la risposta che cercavi?</h2>
+          <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+            Il nostro team di esperti è sempre disponibile per aiutarti con qualsiasi domanda
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <button className="bg-white text-brand-red px-8 py-4 rounded-xl font-bold hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+              Contatta il Supporto
+            </button>
+            <button className="border-2 border-white text-white px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-brand-red transition-all duration-300 transform hover:scale-105">
+              Prenota una Demo
+            </button>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

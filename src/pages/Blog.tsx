@@ -1,196 +1,225 @@
 
-import CustomCursor from '../components/CustomCursor';
-import { Link } from 'react-router-dom';
-
 const Blog = () => {
-  const posts = [
+  const blogPosts = [
     {
       id: 1,
       title: "Le nuove normative sulla sicurezza sul lavoro 2024",
-      excerpt: "Tutto quello che devi sapere sui nuovi aggiornamenti normativi e come adeguare la tua azienda.",
-      date: "15 Marzo 2024",
+      excerpt: "Scopri tutte le novità legislative che entreranno in vigore quest'anno e come prepararsi per essere conformi.",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
       category: "Normative",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop",
-      readTime: "5 min"
+      date: "15 Marzo 2024",
+      readTime: "5 min",
+      featured: true
     },
     {
       id: 2,
-      title: "Come implementare un sistema di gestione HSE efficace",
-      excerpt: "Guida completa per strutturare un sistema di Health, Safety & Environment nella tua organizzazione.",
+      title: "Come implementare un sistema HSE efficace",
+      excerpt: "Guida completa per implementare un sistema di gestione HSE che funzioni davvero nella tua azienda.",
+      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      category: "Best Practices",
       date: "12 Marzo 2024",
-      category: "Guide",
-      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=800&h=400&fit=crop",
-      readTime: "8 min"
+      readTime: "8 min",
+      featured: false
     },
     {
       id: 3,
-      title: "L'importanza della formazione continua in azienda",
-      excerpt: "Perché investire nella formazione del personale è fondamentale per la sicurezza aziendale.",
-      date: "10 Marzo 2024",
-      category: "Formazione",
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop",
-      readTime: "6 min"
+      title: "Digitalizzazione della sicurezza: vantaggi e sfide",
+      excerpt: "Perché la digitalizzazione è fondamentale per la moderna gestione della sicurezza aziendale.",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      category: "Tecnologia",
+      date: "8 Marzo 2024",
+      readTime: "6 min",
+      featured: false
     },
     {
       id: 4,
-      title: "Digitalizzazione dei processi di sicurezza",
-      excerpt: "Come la tecnologia sta rivoluzionando la gestione della sicurezza nelle aziende moderne.",
-      date: "8 Marzo 2024",
-      category: "Tecnologia",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&h=400&fit=crop",
-      readTime: "7 min"
+      title: "Formazione del personale: metodologie innovative",
+      excerpt: "Le nuove frontiere della formazione aziendale per la sicurezza sul lavoro nell'era digitale.",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      category: "Formazione",
+      date: "5 Marzo 2024",
+      readTime: "7 min",
+      featured: false
     },
     {
       id: 5,
-      title: "Audit di sicurezza: best practices e checklist",
-      excerpt: "Una guida pratica per condurre audit di sicurezza efficaci e conformi alle normative.",
-      date: "5 Marzo 2024",
-      category: "Audit",
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=400&fit=crop",
-      readTime: "10 min"
+      title: "Risk Assessment: dalla teoria alla pratica",
+      excerpt: "Come condurre una valutazione dei rischi efficace e conforme alle normative vigenti.",
+      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      category: "Risk Management",
+      date: "2 Marzo 2024",
+      readTime: "10 min",
+      featured: false
     },
     {
       id: 6,
-      title: "Gestione documentale: organizza la sicurezza",
-      excerpt: "Come strutturare e gestire efficacemente tutta la documentazione relativa alla sicurezza aziendale.",
-      date: "1 Marzo 2024",
-      category: "Documenti",
-      image: "https://images.unsplash.com/photo-1568992688065-536aad8a12f6?w=800&h=400&fit=crop",
-      readTime: "4 min"
+      title: "Industria 4.0 e sicurezza: il futuro è oggi",
+      excerpt: "Come l'Industria 4.0 sta rivoluzionando l'approccio alla sicurezza nei luoghi di lavoro.",
+      image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      category: "Innovazione",
+      date: "28 Febbraio 2024",
+      readTime: "9 min",
+      featured: false
     }
   ];
 
-  const categories = ["Tutti", "Normative", "Guide", "Formazione", "Tecnologia", "Audit", "Documenti"];
+  const categories = ["Tutti", "Normative", "Best Practices", "Tecnologia", "Formazione", "Risk Management", "Innovazione"];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
-      <CustomCursor />
-      
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white bg-opacity-95 backdrop-blur-md border-b border-gray-200 shadow-lg">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-20">
-            <Link to="/" className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-r from-brand-red to-brand-red-light rounded-2xl flex items-center justify-center shadow-lg">
-                <span className="text-white font-black text-lg">TI</span>
-              </div>
-              <div className="text-left">
-                <span className="font-black text-2xl text-gray-800 block leading-none">TUTELA</span>
-                <span className="font-black text-xl text-brand-red block leading-none">IMPRESA</span>
-              </div>
-            </Link>
-            
-            <div className="hidden md:flex items-center space-x-8">
-              <Link to="/functionality" className="text-gray-700 hover:text-brand-red transition-colors font-semibold">Funzionalità</Link>
-              <Link to="/sectors" className="text-gray-700 hover:text-brand-red transition-colors font-semibold">Settori</Link>
-              <Link to="/blog" className="text-brand-red font-semibold">Blog</Link>
-              <Link to="/faq" className="text-gray-700 hover:text-brand-red transition-colors font-semibold">FAQ</Link>
-              <Link to="/contact" className="text-gray-700 hover:text-brand-red transition-colors font-semibold">Contatti</Link>
-              <button className="bg-gradient-to-r from-brand-red to-brand-red-light text-white px-8 py-3 rounded-xl font-bold hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                Richiedi la Demo
-              </button>
-            </div>
-          </div>
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-20 right-20 w-64 h-64 bg-brand-red rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 left-20 w-48 h-48 bg-brand-red rounded-full blur-2xl"></div>
         </div>
-      </nav>
-
-      {/* Main Content */}
-      <main className="pt-32 pb-20">
-        <div className="container mx-auto px-4">
-          {/* Header */}
+        
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <div className="inline-flex items-center space-x-2 bg-brand-red text-white px-6 py-3 rounded-full text-sm font-semibold mb-8">
-              <span>📖 Il nostro Blog</span>
+              <span>📚 Blog & Insights</span>
             </div>
-            <h1 className="text-5xl lg:text-6xl font-black mb-6">
-              Insights e Guide per la 
+            <h1 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900">
+              Resta aggiornato sulla
               <br />
               <span className="gradient-text bg-gradient-to-r from-brand-red via-brand-red-light to-brand-red bg-clip-text text-transparent">
-                Sicurezza Aziendale
+                sicurezza aziendale
               </span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Rimani aggiornato sulle ultime normative, best practices e innovazioni nel mondo della sicurezza sul lavoro.
+              Guide, approfondimenti e novità dal mondo della sicurezza sul lavoro per tenere la tua azienda sempre al passo
             </p>
           </div>
+        </div>
+      </section>
 
-          {/* Categories Filter */}
+      {/* Categories Filter */}
+      <section className="py-8">
+        <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {categories.map((category) => (
+            {categories.map((category, index) => (
               <button
-                key={category}
-                className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 ${
-                  category === "Tutti" 
-                    ? "bg-brand-red text-white shadow-lg" 
-                    : "bg-white text-gray-700 border border-gray-200 hover:border-brand-red hover:text-brand-red"
+                key={index}
+                className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 ${
+                  index === 0 
+                    ? 'bg-brand-red text-white shadow-lg' 
+                    : 'bg-white text-gray-600 hover:bg-brand-red hover:text-white shadow-md'
                 }`}
               >
                 {category}
               </button>
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* Blog Posts Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {posts.map((post) => (
-              <article key={post.id} className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 group">
+      {/* Featured Post */}
+      <section className="py-8">
+        <div className="container mx-auto px-4">
+          <div className="bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-100 mb-20">
+            <div className="grid lg:grid-cols-2 gap-0">
+              <div className="relative overflow-hidden">
+                <img 
+                  src={blogPosts[0].image} 
+                  alt={blogPosts[0].title}
+                  className="w-full h-80 lg:h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute top-6 left-6">
+                  <span className="bg-brand-red text-white px-4 py-2 rounded-full text-sm font-semibold">
+                    In Evidenza
+                  </span>
+                </div>
+              </div>
+              <div className="p-12 flex flex-col justify-center">
+                <div className="flex items-center space-x-4 mb-6">
+                  <span className="bg-brand-red bg-opacity-10 text-brand-red px-3 py-1 rounded-full text-sm font-semibold">
+                    {blogPosts[0].category}
+                  </span>
+                  <span className="text-gray-500 text-sm">{blogPosts[0].date}</span>
+                  <span className="text-gray-500 text-sm">• {blogPosts[0].readTime}</span>
+                </div>
+                <h2 className="text-3xl font-bold text-gray-800 mb-6 leading-tight">
+                  {blogPosts[0].title}
+                </h2>
+                <p className="text-gray-600 text-lg leading-relaxed mb-8">
+                  {blogPosts[0].excerpt}
+                </p>
+                <button className="bg-gradient-to-r from-brand-red to-brand-red-light text-white px-8 py-4 rounded-xl font-bold hover:shadow-xl transition-all duration-300 transform hover:scale-105 self-start">
+                  Leggi l'articolo →
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Blog Grid */}
+      <section className="py-12">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {blogPosts.slice(1).map((post) => (
+              <article 
+                key={post.id} 
+                className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 border border-gray-100 group"
+              >
                 <div className="relative overflow-hidden">
                   <img 
                     src={post.image} 
                     alt={post.title}
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute top-4 left-4 bg-brand-red text-white px-3 py-1 rounded-full text-sm font-semibold">
-                    {post.category}
-                  </div>
-                  <div className="absolute top-4 right-4 bg-white bg-opacity-90 text-gray-700 px-3 py-1 rounded-full text-sm font-semibold">
-                    {post.readTime}
+                  <div className="absolute top-4 left-4">
+                    <span className="bg-white bg-opacity-90 text-brand-red px-3 py-1 rounded-full text-xs font-semibold">
+                      {post.category}
+                    </span>
                   </div>
                 </div>
                 
                 <div className="p-6">
-                  <div className="text-gray-500 text-sm mb-3">{post.date}</div>
-                  <h2 className="text-xl font-bold text-gray-800 mb-3 line-clamp-2 group-hover:text-brand-red transition-colors duration-300">
+                  <div className="flex items-center space-x-2 text-gray-500 text-sm mb-4">
+                    <span>{post.date}</span>
+                    <span>•</span>
+                    <span>{post.readTime}</span>
+                  </div>
+                  
+                  <h3 className="text-xl font-bold text-gray-800 mb-3 leading-tight group-hover:text-brand-red transition-colors duration-300">
                     {post.title}
-                  </h2>
-                  <p className="text-gray-600 mb-4 line-clamp-3">
+                  </h3>
+                  
+                  <p className="text-gray-600 text-sm leading-relaxed mb-6">
                     {post.excerpt}
                   </p>
-                  <button className="text-brand-red font-semibold hover:underline flex items-center space-x-2 group-hover:translate-x-2 transition-transform duration-300">
-                    <span>Leggi tutto</span>
-                    <span>→</span>
+                  
+                  <button className="text-brand-red font-semibold hover:underline group-hover:translate-x-2 transition-transform duration-300">
+                    Leggi di più →
                   </button>
                 </div>
               </article>
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* Load More Button */}
-          <div className="text-center mt-12">
-            <button className="bg-gradient-to-r from-brand-red to-brand-red-light text-white px-8 py-4 rounded-xl font-bold text-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-              Carica Altri Articoli
+      {/* Newsletter CTA */}
+      <section className="py-20 bg-gradient-to-r from-brand-red to-brand-red-light text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold mb-6">Non perdere mai un aggiornamento</h2>
+          <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+            Iscriviti alla nostra newsletter per ricevere articoli, guide e novità direttamente nella tua inbox
+          </p>
+          
+          <div className="max-w-md mx-auto flex">
+            <input 
+              type="email" 
+              placeholder="La tua email"
+              className="flex-1 p-4 rounded-l-xl text-gray-800 focus:outline-none focus:ring-2 focus:ring-white"
+            />
+            <button className="bg-white text-brand-red px-8 py-4 rounded-r-xl font-bold hover:bg-gray-100 transition-all duration-300">
+              Iscriviti
             </button>
           </div>
-
-          {/* Newsletter Subscription */}
-          <div className="mt-20 bg-gradient-to-br from-brand-red to-brand-red-light rounded-3xl p-12 text-white text-center">
-            <h3 className="text-3xl font-black mb-4">Rimani sempre aggiornato</h3>
-            <p className="text-xl mb-8 opacity-90">
-              Iscriviti alla nostra newsletter per ricevere i migliori contenuti sulla sicurezza aziendale direttamente nella tua inbox.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-              <input 
-                type="email" 
-                placeholder="La tua email"
-                className="flex-1 px-4 py-3 rounded-xl text-gray-800 focus:ring-2 focus:ring-white focus:outline-none"
-              />
-              <button className="bg-white text-brand-red px-6 py-3 rounded-xl font-bold hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-                Iscriviti
-              </button>
-            </div>
-          </div>
         </div>
-      </main>
+      </section>
     </div>
   );
 };

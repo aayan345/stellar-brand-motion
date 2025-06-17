@@ -10,6 +10,12 @@ const PricingCTASection = () => {
 
   return (
     <section className="py-20 bg-gradient-to-br from-brand-red via-brand-red-light to-brand-red text-white relative overflow-hidden">
+      {/* Floating Background Elements */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 left-20 w-40 h-40 bg-white rounded-full blur-2xl animate-float"></div>
+        <div className="absolute bottom-32 right-32 w-60 h-60 bg-white rounded-full blur-3xl animate-float" style={{animationDelay: '1.5s'}}></div>
+      </div>
+
       <div className="container mx-auto px-4 relative z-10 text-center">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl lg:text-5xl font-black mb-8 leading-tight">
@@ -32,7 +38,7 @@ const PricingCTASection = () => {
           </div>
 
           {/* Features List */}
-          <div className="flex flex-col sm:flex-row gap-8 justify-center items-center text-lg mb-12">
+          <div className="flex flex-col sm:flex-row gap-8 justify-center items-center text-lg mb-16">
             <div className="flex items-center space-x-2">
               <span className="text-green-400">✓</span>
               <span>Prova gratuita di 30 giorni</span>
@@ -47,19 +53,53 @@ const PricingCTASection = () => {
             </div>
           </div>
 
-          {/* Pastries Images */}
-          <div className="flex justify-center items-center space-x-4 mt-8">
-            {pastries.map((pastry, index) => (
-              <div key={index} className="transform hover:scale-110 transition-transform duration-300">
-                <div className="w-16 h-16 rounded-full overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
-                  <img 
-                    src={pastry} 
-                    alt={`Pastry ${index + 1}`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+          {/* Creative Pastries Display */}
+          <div className="relative">
+            {/* Central Coffee Cup Icon */}
+            <div className="flex justify-center mb-8">
+              <div className="w-24 h-24 bg-white bg-opacity-20 rounded-full flex items-center justify-center backdrop-blur-sm border border-white border-opacity-30">
+                <div className="text-4xl">☕</div>
               </div>
-            ))}
+            </div>
+
+            {/* Orbiting Pastries */}
+            <div className="relative w-80 h-80 mx-auto">
+              {pastries.map((pastry, index) => {
+                const angle = (index * 72) - 90; // 360/5 = 72 degrees between each
+                const radius = 140;
+                const x = Math.cos(angle * Math.PI / 180) * radius;
+                const y = Math.sin(angle * Math.PI / 180) * radius;
+                
+                return (
+                  <div 
+                    key={index} 
+                    className="absolute w-16 h-16 rounded-full overflow-hidden shadow-xl border-4 border-white border-opacity-50 hover:scale-110 transition-all duration-300 cursor-pointer group"
+                    style={{
+                      left: `calc(50% + ${x}px - 2rem)`,
+                      top: `calc(50% + ${y}px - 2rem)`,
+                      animationDelay: `${index * 0.2}s`
+                    }}
+                  >
+                    <img 
+                      src={pastry} 
+                      alt={`Pastry ${index + 1}`}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    {/* Floating Price Tag */}
+                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-yellow-400 text-brand-red rounded-full flex items-center justify-center text-xs font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      €
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Bottom Text */}
+            <div className="mt-8">
+              <p className="text-lg opacity-90 font-medium">
+                Il costo di un cappuccino al giorno per proteggere la tua azienda
+              </p>
+            </div>
           </div>
         </div>
       </div>

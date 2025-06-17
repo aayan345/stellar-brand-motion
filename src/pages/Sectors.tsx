@@ -1,192 +1,202 @@
 
-import CustomCursor from '../components/CustomCursor';
-import { Link } from 'react-router-dom';
-
 const Sectors = () => {
   const sectors = [
     {
-      name: "Costruzioni",
-      description: "Gestione completa della sicurezza nei cantieri, DPI, formazione specializzata e conformità normativa per il settore edile.",
-      icon: "🏗️",
-      features: ["Gestione cantieri", "DPI specializzati", "Formazione RSPP", "Piani di sicurezza"],
-      image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=400&fit=crop"
-    },
-    {
-      name: "Manifatturiero",
-      description: "Sicurezza industriale, gestione macchinari, controllo qualità e prevenzione incidenti per aziende manifatturiere.",
+      title: "Manifatturiero",
+      description: "Soluzioni complete per industrie manifatturiere, dalla gestione dei rischi alla conformità normativa.",
+      image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      features: ["Gestione macchine e impianti", "DPI e formazione operatori", "Controllo sostanze chimiche", "Audit di sicurezza"],
       icon: "🏭",
-      features: ["Sicurezza macchinari", "Controllo qualità", "Manutenzione predittiva", "Audit di sicurezza"],
-      image: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=800&h=400&fit=crop"
+      color: "from-blue-500 to-blue-600"
     },
     {
-      name: "Sanità",
-      description: "Protocolli sanitari, gestione rifiuti speciali, sicurezza biologica e conformità alle normative sanitarie.",
-      icon: "🏥",
-      features: ["Protocolli sanitari", "Rifiuti speciali", "Sicurezza biologica", "Sterilizzazione"],
-      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=400&fit=crop"
+      title: "Edilizia",
+      description: "Gestione completa della sicurezza nei cantieri, POS, coordinamento e formazione del personale.",
+      image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      features: ["POS e PSC digitali", "Gestione ponteggi e DPI", "Coordinamento CSP/CSE", "Formazione cantieristi"],
+      icon: "🏗️",
+      color: "from-orange-500 to-orange-600"
     },
     {
-      name: "Alimentare",
-      description: "HACCP, tracciabilità alimentare, igiene del lavoro e conformità alle normative del settore alimentare.",
-      icon: "🍎",
-      features: ["HACCP completo", "Tracciabilità", "Igiene del lavoro", "Controlli qualità"],
-      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=400&fit=crop"
+      title: "Alimentare",
+      description: "Sicurezza alimentare e conformità HACCP con monitoraggio automatizzato e controllo qualità.",
+      image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      features: ["Sistema HACCP digitale", "Controllo temperature", "Gestione allergeni", "Audit BRC/IFS"],
+      icon: "🍽️",
+      color: "from-green-500 to-green-600"
     },
     {
-      name: "Logistica",
-      description: "Sicurezza magazzini, movimentazione merci, gestione flotte e prevenzione infortuni nel trasporto.",
-      icon: "📦",
-      features: ["Sicurezza magazzini", "Movimentazione", "Gestione flotte", "Tracking veicoli"],
-      image: "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=800&h=400&fit=crop"
+      title: "Chimico",
+      description: "Gestione avanzata di sostanze pericolose, schede di sicurezza e protocolli di emergenza.",
+      image: "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      features: ["Registro sostanze chimiche", "Schede di sicurezza SDS", "Piani di emergenza", "Monitoraggio esposizioni"],
+      icon: "⚗️",
+      color: "from-purple-500 to-purple-600"
     },
     {
-      name: "Servizi",
-      description: "Sicurezza uffici, smart working, stress lavoro-correlato e benessere organizzativo per aziende di servizi.",
+      title: "Servizi",
+      description: "Soluzioni flessibili per aziende di servizi, uffici e attività commerciali di ogni dimensione.",
+      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      features: ["DVR per uffici", "Gestione stress lavoro", "Formazione digitale", "Sorveglianza sanitaria"],
       icon: "💼",
-      features: ["Sicurezza uffici", "Smart working", "Stress lavoro", "Benessere organizzativo"],
-      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=400&fit=crop"
+      color: "from-indigo-500 to-indigo-600"
+    },
+    {
+      title: "Trasporti",
+      description: "Sicurezza nel trasporto merci e persone, gestione flotte e conformità alle normative del settore.",
+      image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      features: ["Gestione autisti", "Controlli tecnici mezzi", "ADR e merci pericolose", "Tachigrafi digitali"],
+      icon: "🚛",
+      color: "from-red-500 to-red-600"
     }
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
-      <CustomCursor />
-      
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white bg-opacity-95 backdrop-blur-md border-b border-gray-200 shadow-lg">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-20">
-            <Link to="/" className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-r from-brand-red to-brand-red-light rounded-2xl flex items-center justify-center shadow-lg">
-                <span className="text-white font-black text-lg">TI</span>
-              </div>
-              <div className="text-left">
-                <span className="font-black text-2xl text-gray-800 block leading-none">TUTELA</span>
-                <span className="font-black text-xl text-brand-red block leading-none">IMPRESA</span>
-              </div>
-            </Link>
-            
-            <div className="hidden md:flex items-center space-x-8">
-              <Link to="/functionality" className="text-gray-700 hover:text-brand-red transition-colors font-semibold">Funzionalità</Link>
-              <Link to="/sectors" className="text-brand-red font-semibold">Settori</Link>
-              <Link to="/blog" className="text-gray-700 hover:text-brand-red transition-colors font-semibold">Blog</Link>
-              <Link to="/faq" className="text-gray-700 hover:text-brand-red transition-colors font-semibold">FAQ</Link>
-              <Link to="/contact" className="text-gray-700 hover:text-brand-red transition-colors font-semibold">Contatti</Link>
-              <button className="bg-gradient-to-r from-brand-red to-brand-red-light text-white px-8 py-3 rounded-xl font-bold hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                Richiedi la Demo
-              </button>
-            </div>
-          </div>
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-20 right-20 w-64 h-64 bg-brand-red rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 left-20 w-48 h-48 bg-brand-red rounded-full blur-2xl"></div>
         </div>
-      </nav>
-
-      {/* Main Content */}
-      <main className="pt-32 pb-20">
-        <div className="container mx-auto px-4">
-          {/* Header */}
+        
+        <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <div className="inline-flex items-center space-x-2 bg-brand-red text-white px-6 py-3 rounded-full text-sm font-semibold mb-8">
-              <span>🏢 Settori di Applicazione</span>
+              <span>🏢 Settori di Attività</span>
             </div>
-            <h1 className="text-5xl lg:text-6xl font-black mb-6">
-              Soluzioni su misura per ogni 
+            <h1 className="text-5xl lg:text-6xl font-black mb-6 text-gray-900">
+              Soluzioni su misura per
               <br />
               <span className="gradient-text bg-gradient-to-r from-brand-red via-brand-red-light to-brand-red bg-clip-text text-transparent">
-                settore industriale
+                ogni settore
               </span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Tutela Impresa si adatta alle specifiche esigenze del tuo settore, offrendo soluzioni personalizzate per ogni tipo di attività produttiva.
+              Expertise specializzata e soluzioni personalizzate per rispondere alle specifiche esigenze di sicurezza del tuo settore
             </p>
           </div>
+        </div>
+      </section>
 
-          {/* Sectors Grid */}
-          <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto mb-20">
+      {/* Sectors Grid */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {sectors.map((sector, index) => (
-              <div key={index} className="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:scale-105 hover:-translate-y-2 group">
-                <div className="relative overflow-hidden">
+              <div
+                key={index}
+                className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 border border-gray-100 group"
+              >
+                {/* Image Header */}
+                <div className="relative overflow-hidden h-48">
                   <img 
                     src={sector.image} 
-                    alt={sector.name}
-                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                    alt={sector.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
-                  <div className="absolute top-6 left-6 w-16 h-16 bg-white bg-opacity-90 rounded-2xl flex items-center justify-center text-3xl shadow-lg">
-                    {sector.icon}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                  <div className="absolute top-6 left-6">
+                    <div className={`w-12 h-12 bg-gradient-to-r ${sector.color} rounded-xl flex items-center justify-center text-white text-2xl shadow-lg`}>
+                      {sector.icon}
+                    </div>
+                  </div>
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <h3 className="text-2xl font-bold text-white mb-2">{sector.title}</h3>
                   </div>
                 </div>
-                
+
+                {/* Content */}
                 <div className="p-8">
-                  <h3 className="text-2xl font-black text-gray-800 mb-4 group-hover:text-brand-red transition-colors duration-300">
-                    {sector.name}
-                  </h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
+                  <p className="text-gray-600 leading-relaxed mb-6">
                     {sector.description}
                   </p>
-                  
-                  <div className="space-y-3 mb-6">
+
+                  {/* Features */}
+                  <div className="space-y-3 mb-8">
                     {sector.features.map((feature, featureIndex) => (
                       <div key={featureIndex} className="flex items-center space-x-3">
-                        <div className="w-6 h-6 bg-brand-red rounded-full flex items-center justify-center">
-                          <span className="text-white text-xs">✓</span>
-                        </div>
-                        <span className="text-gray-700 font-medium">{feature}</span>
+                        <div className={`w-2 h-2 bg-gradient-to-r ${sector.color} rounded-full`}></div>
+                        <span className="text-sm text-gray-700">{feature}</span>
                       </div>
                     ))}
                   </div>
-                  
-                  <button className="w-full bg-gradient-to-r from-brand-red to-brand-red-light text-white py-3 rounded-xl font-bold hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-                    Scopri le Soluzioni →
+
+                  {/* CTA Button */}
+                  <button className={`w-full bg-gradient-to-r ${sector.color} text-white py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105`}>
+                    Scopri le Soluzioni
                   </button>
                 </div>
               </div>
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* Stats Section */}
-          <div className="bg-gradient-to-br from-brand-red to-brand-red-light rounded-3xl p-12 text-white text-center mb-20">
-            <h3 className="text-3xl font-black mb-8">I numeri della nostra esperienza</h3>
-            <div className="grid md:grid-cols-4 gap-8">
-              <div>
-                <div className="text-4xl font-black mb-2">500+</div>
-                <div className="text-lg opacity-90">Aziende Costruzioni</div>
-              </div>
-              <div>
-                <div className="text-4xl font-black mb-2">300+</div>
-                <div className="text-lg opacity-90">Aziende Manifatturiere</div>
-              </div>
-              <div>
-                <div className="text-4xl font-black mb-2">150+</div>
-                <div className="text-lg opacity-90">Strutture Sanitarie</div>
-              </div>
-              <div>
-                <div className="text-4xl font-black mb-2">200+</div>
-                <div className="text-lg opacity-90">Aziende Servizi</div>
-              </div>
-            </div>
+      {/* Statistics Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-800 mb-6">La fiducia dei leader di settore</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Migliaia di aziende di ogni settore si affidano a Tutela Impresa per la loro sicurezza
+            </p>
           </div>
 
-          {/* CTA Section */}
-          <div className="text-center">
-            <h3 className="text-3xl font-black text-gray-800 mb-6">
-              Non vedi il tuo settore? Nessun problema!
-            </h3>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              Tutela Impresa è flessibile e si adatta a qualsiasi tipo di attività. Contattaci per una consulenza personalizzata.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                to="/contact"
-                className="bg-gradient-to-r from-brand-red to-brand-red-light text-white px-8 py-4 rounded-xl font-bold text-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 inline-block"
-              >
-                Consulenza Gratuita →
-              </Link>
-              <button className="border-2 border-brand-red text-brand-red px-8 py-4 rounded-xl font-bold text-lg hover:bg-brand-red hover:text-white transition-all duration-300 transform hover:scale-105">
-                Richiedi Demo
-              </button>
+          <div className="grid md:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <span className="text-white text-3xl font-bold">50M+</span>
+              </div>
+              <h3 className="text-lg font-bold text-gray-800 mb-2">Dipendenti Protetti</h3>
+              <p className="text-gray-600">in tutta Europa</p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <span className="text-white text-3xl font-bold">99.9%</span>
+              </div>
+              <h3 className="text-lg font-bold text-gray-800 mb-2">Uptime Garantito</h3>
+              <p className="text-gray-600">sempre disponibile</p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <span className="text-white text-3xl font-bold">24/7</span>
+              </div>
+              <h3 className="text-lg font-bold text-gray-800 mb-2">Supporto Tecnico</h3>
+              <p className="text-gray-600">sempre al tuo fianco</p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-20 h-20 bg-gradient-to-r from-brand-red to-brand-red-light rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <span className="text-white text-3xl font-bold">15+</span>
+              </div>
+              <h3 className="text-lg font-bold text-gray-800 mb-2">Anni di Esperienza</h3>
+              <p className="text-gray-600">nel settore HSE</p>
             </div>
           </div>
         </div>
-      </main>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-gradient-to-r from-brand-red to-brand-red-light text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-4xl font-bold mb-6">Il tuo settore non è in lista?</h2>
+          <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+            Contattaci per una consulenza personalizzata. Creiamo soluzioni su misura per ogni tipo di attività
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <button className="bg-white text-brand-red px-8 py-4 rounded-xl font-bold hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+              Consulenza Gratuita
+            </button>
+            <button className="border-2 border-white text-white px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-brand-red transition-all duration-300 transform hover:scale-105">
+              Richiedi Demo
+            </button>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
