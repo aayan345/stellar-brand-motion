@@ -72,26 +72,26 @@ const Blog = () => {
   const categories = ["Tutti", "Normative", "Best Practices", "Tecnologia", "Formazione", "Risk Management", "Innovazione"];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-red-50">
       {/* Premium Hero Section */}
       <section className="pt-32 pb-20 relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_20%,rgba(196,30,58,0.1)_0%,transparent_50%)]"></div>
-          <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_80%,rgba(147,51,234,0.1)_0%,transparent_50%)]"></div>
+          <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_80%,rgba(224,53,85,0.1)_0%,transparent_50%)]"></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-brand-red to-purple-600 text-white px-8 py-4 rounded-full text-sm font-bold mb-8 shadow-xl">
+            <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-brand-red to-brand-red-light text-white px-8 py-4 rounded-full text-sm font-bold mb-8 shadow-xl">
               <div className="w-3 h-3 bg-white rounded-full animate-pulse"></div>
               <span>📚 Blog & Insights Premium</span>
             </div>
             <h1 className="text-6xl lg:text-8xl font-black mb-8 text-gray-900 leading-tight">
               Resta aggiornato sulla
               <br />
-              <span className="relative gradient-text bg-gradient-to-r from-brand-red via-purple-600 to-blue-600 bg-clip-text text-transparent">
+              <span className="relative gradient-text bg-gradient-to-r from-brand-red to-brand-red-light bg-clip-text text-transparent">
                 sicurezza aziendale
-                <div className="absolute -bottom-4 left-0 right-0 h-3 bg-gradient-to-r from-brand-red/30 via-purple-600/30 to-blue-600/30 rounded-full"></div>
+                <div className="absolute -bottom-4 left-0 right-0 h-3 bg-gradient-to-r from-brand-red/30 to-brand-red-light/30 rounded-full"></div>
               </span>
             </h1>
             <p className="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
@@ -110,13 +110,13 @@ const Blog = () => {
                 key={index}
                 className={`group px-8 py-4 rounded-full font-bold transition-all duration-500 transform hover:scale-105 shadow-lg relative overflow-hidden ${
                   index === 0 
-                    ? 'bg-gradient-to-r from-brand-red to-purple-600 text-white shadow-xl' 
-                    : 'bg-white text-gray-600 hover:bg-gradient-to-r hover:from-brand-red hover:to-purple-600 hover:text-white border-2 border-gray-200 hover:border-transparent'
+                    ? 'bg-gradient-to-r from-brand-red to-brand-red-light text-white shadow-xl' 
+                    : 'bg-white text-gray-600 hover:bg-gradient-to-r hover:from-brand-red hover:to-brand-red-light hover:text-white border-2 border-gray-200 hover:border-transparent'
                 }`}
               >
                 <span className="relative z-10">{category}</span>
                 {index !== 0 && (
-                  <div className="absolute inset-0 bg-gradient-to-r from-brand-red to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-brand-red to-brand-red-light opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 )}
               </button>
             ))}
@@ -128,7 +128,7 @@ const Blog = () => {
       <section className="py-8">
         <div className="container mx-auto px-4">
           <div className="bg-white rounded-3xl overflow-hidden shadow-3xl border border-gray-100 mb-20 relative">
-            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-brand-red via-purple-600 to-blue-600"></div>
+            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-brand-red to-brand-red-light"></div>
             <div className="grid lg:grid-cols-2 gap-0">
               <div className="relative overflow-hidden">
                 <img 
@@ -138,7 +138,7 @@ const Blog = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                 <div className="absolute top-8 left-8">
-                  <span className="bg-gradient-to-r from-brand-red to-purple-600 text-white px-6 py-3 rounded-full text-sm font-bold shadow-xl">
+                  <span className="bg-gradient-to-r from-brand-red to-brand-red-light text-white px-6 py-3 rounded-full text-sm font-bold shadow-xl">
                     ⭐ In Evidenza
                   </span>
                 </div>
@@ -153,7 +153,7 @@ const Blog = () => {
               </div>
               <div className="p-12 flex flex-col justify-center">
                 <div className="flex items-center space-x-4 mb-8">
-                  <span className="bg-gradient-to-r from-brand-red/10 to-purple-600/10 text-brand-red px-4 py-2 rounded-full text-sm font-bold border border-brand-red/20">
+                  <span className="bg-gradient-to-r from-brand-red/10 to-brand-red-light/10 text-brand-red px-4 py-2 rounded-full text-sm font-bold border border-brand-red/20">
                     {blogPosts[0].category}
                   </span>
                   <span className="text-gray-500 font-medium">{blogPosts[0].date}</span>
@@ -166,7 +166,7 @@ const Blog = () => {
                 <p className="text-gray-600 text-xl leading-relaxed mb-10">
                   {blogPosts[0].excerpt}
                 </p>
-                <button className="group bg-gradient-to-r from-brand-red to-purple-600 text-white px-10 py-4 rounded-2xl font-bold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 self-start relative overflow-hidden">
+                <button className="group bg-gradient-to-r from-brand-red to-brand-red-light text-white px-10 py-4 rounded-2xl font-bold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 self-start relative overflow-hidden">
                   <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
                   <span className="relative flex items-center space-x-3">
                     <span>Leggi l'articolo</span>
@@ -223,13 +223,13 @@ const Blog = () => {
 
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-3">
-                      <div className="w-8 h-8 bg-gradient-to-r from-brand-red to-purple-600 rounded-full flex items-center justify-center">
+                      <div className="w-8 h-8 bg-gradient-to-r from-brand-red to-brand-red-light rounded-full flex items-center justify-center">
                         <span className="text-white text-xs font-bold">👨‍💼</span>
                       </div>
                       <span className="text-sm font-medium text-gray-600">{post.author}</span>
                     </div>
                     
-                    <button className="text-brand-red font-bold group-hover:text-purple-600 hover:underline group-hover:translate-x-2 transition-all duration-300 flex items-center space-x-2">
+                    <button className="text-brand-red font-bold group-hover:text-brand-red-light hover:underline group-hover:translate-x-2 transition-all duration-300 flex items-center space-x-2">
                       <span>Leggi</span>
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
@@ -244,7 +244,7 @@ const Blog = () => {
       </section>
 
       {/* Premium Newsletter CTA */}
-      <section className="py-20 bg-gradient-to-br from-brand-red via-purple-600 to-blue-600 text-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-brand-red to-brand-red-light text-white relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.1)_0%,transparent_50%)]"></div>
           <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_80%_70%,rgba(255,255,255,0.08)_0%,transparent_50%)]"></div>

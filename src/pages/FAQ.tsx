@@ -76,26 +76,26 @@ const FAQ = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-red-50">
       {/* Premium Hero Section */}
       <section className="pt-32 pb-20 relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_30%,rgba(196,30,58,0.1)_0%,transparent_50%)]"></div>
-          <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_80%_70%,rgba(59,130,246,0.1)_0%,transparent_50%)]"></div>
+          <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_80%_70%,rgba(224,53,85,0.1)_0%,transparent_50%)]"></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-brand-red to-blue-600 text-white px-8 py-4 rounded-full text-sm font-bold mb-8 shadow-xl">
+            <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-brand-red to-brand-red-light text-white px-8 py-4 rounded-full text-sm font-bold mb-8 shadow-xl">
               <div className="w-3 h-3 bg-white rounded-full animate-pulse"></div>
               <span>❓ FAQ Premium</span>
             </div>
             <h1 className="text-6xl lg:text-8xl font-black mb-8 text-gray-900 leading-tight">
               Tutte le risposte che
               <br />
-              <span className="relative gradient-text bg-gradient-to-r from-brand-red via-purple-600 to-blue-600 bg-clip-text text-transparent">
+              <span className="relative gradient-text bg-gradient-to-r from-brand-red to-brand-red-light bg-clip-text text-transparent">
                 stavi cercando
-                <div className="absolute -bottom-4 left-0 right-0 h-3 bg-gradient-to-r from-brand-red/30 via-purple-600/30 to-blue-600/30 rounded-full"></div>
+                <div className="absolute -bottom-4 left-0 right-0 h-3 bg-gradient-to-r from-brand-red/30 to-brand-red-light/30 rounded-full"></div>
               </span>
             </h1>
             <p className="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
@@ -111,10 +111,10 @@ const FAQ = () => {
           <div className="max-w-5xl mx-auto space-y-16">
             {faqs.map((category, categoryIndex) => (
               <div key={categoryIndex} className="group bg-white rounded-3xl p-12 shadow-2xl border border-gray-100 hover:shadow-3xl transition-all duration-500 relative overflow-hidden">
-                <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-brand-red via-purple-600 to-blue-600"></div>
+                <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-brand-red to-brand-red-light"></div>
                 
                 <div className="flex items-center mb-12">
-                  <div className="w-16 h-16 bg-gradient-to-br from-brand-red to-blue-600 rounded-2xl flex items-center justify-center mr-6 shadow-xl group-hover:scale-110 transition-transform duration-500">
+                  <div className="w-16 h-16 bg-gradient-to-br from-brand-red to-brand-red-light rounded-2xl flex items-center justify-center mr-6 shadow-xl group-hover:scale-110 transition-transform duration-500">
                     <span className="text-3xl">{category.icon}</span>
                   </div>
                   <div>
@@ -129,13 +129,13 @@ const FAQ = () => {
                   {category.questions.map((faq, faqIndex) => (
                     <details 
                       key={faqIndex} 
-                      className="group/item bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 hover:from-blue-50 hover:to-purple-50 transition-all duration-500 border border-gray-200 hover:border-blue-200"
+                      className="group/item bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8 hover:from-red-50 hover:to-red-50 transition-all duration-500 border border-gray-200 hover:border-brand-red/20"
                     >
                       <summary className="flex justify-between items-start cursor-pointer list-none group-open/item:mb-6">
                         <h3 className="text-xl font-bold text-gray-800 pr-6 leading-relaxed group-hover/item:text-brand-red transition-colors duration-300">
                           {faq.question}
                         </h3>
-                        <div className="w-10 h-10 bg-gradient-to-br from-brand-red to-blue-600 rounded-full flex items-center justify-center flex-shrink-0 group-open/item:rotate-45 transition-transform duration-500 shadow-lg">
+                        <div className="w-10 h-10 bg-gradient-to-br from-brand-red to-brand-red-light rounded-full flex items-center justify-center flex-shrink-0 group-open/item:rotate-45 transition-transform duration-500 shadow-lg">
                           <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                           </svg>
@@ -156,7 +156,7 @@ const FAQ = () => {
       </section>
 
       {/* Premium Contact CTA */}
-      <section className="py-20 bg-gradient-to-br from-brand-red via-purple-600 to-blue-600 text-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-brand-red to-brand-red-light text-white relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.1)_0%,transparent_50%)]"></div>
           <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_80%_70%,rgba(255,255,255,0.08)_0%,transparent_50%)]"></div>
@@ -171,7 +171,7 @@ const FAQ = () => {
             
             <div className="flex flex-col sm:flex-row gap-8 justify-center">
               <button className="group bg-white text-brand-red px-12 py-6 rounded-2xl font-bold text-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-brand-red/5 to-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-brand-red/5 to-brand-red-light/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <span className="relative flex items-center justify-center space-x-3">
                   <span>Contatta il Supporto</span>
                   <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">

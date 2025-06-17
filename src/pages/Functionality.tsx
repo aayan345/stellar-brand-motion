@@ -25,37 +25,37 @@ const Functionality = () => {
   ];
 
   const additionalFeatures = [
-    { title: "Formazione VR/AR", icon: "🎓", description: "Corsi immersivi con realtà virtuale e certificazioni blockchain", color: "from-blue-500 to-blue-700" },
-    { title: "Audit AI-Driven", icon: "🔍", description: "Checklist intelligenti e report automatizzati con machine learning", color: "from-green-500 to-green-700" },
-    { title: "Risk Assessment 4.0", icon: "⚠️", description: "Valutazione predittiva dei rischi con algoritmi avanzati", color: "from-yellow-500 to-orange-500" },
-    { title: "Mobile App Nativa", icon: "📱", description: "App iOS/Android con funzionalità offline e sync automatica", color: "from-purple-500 to-purple-700" },
-    { title: "API Enterprise", icon: "🔗", description: "Integrazione avanzata con SAP, Oracle e sistemi custom", color: "from-pink-500 to-red-500" },
-    { title: "Multi-sede Cloud", icon: "🏢", description: "Gestione centralizzata con architettura multi-tenant", color: "from-indigo-500 to-blue-600" },
-    { title: "Workflow AI", icon: "⚙️", description: "Processi automatizzati con intelligenza artificiale", color: "from-teal-500 to-cyan-500" },
-    { title: "Backup Immutabile", icon: "☁️", description: "Sicurezza enterprise con blockchain e quantum encryption", color: "from-gray-500 to-gray-700" }
+    { title: "Formazione VR/AR", icon: "🎓", description: "Corsi immersivi con realtà virtuale e certificazioni blockchain", color: "from-brand-red to-red-700" },
+    { title: "Audit AI-Driven", icon: "🔍", description: "Checklist intelligenti e report automatizzati con machine learning", color: "from-brand-red-light to-red-600" },
+    { title: "Risk Assessment 4.0", icon: "⚠️", description: "Valutazione predittiva dei rischi con algoritmi avanzati", color: "from-red-500 to-brand-red" },
+    { title: "Mobile App Nativa", icon: "📱", description: "App iOS/Android con funzionalità offline e sync automatica", color: "from-brand-red to-brand-red-light" },
+    { title: "API Enterprise", icon: "🔗", description: "Integrazione avanzata con SAP, Oracle e sistemi custom", color: "from-red-600 to-brand-red" },
+    { title: "Multi-sede Cloud", icon: "🏢", description: "Gestione centralizzata con architettura multi-tenant", color: "from-brand-red-light to-red-500" },
+    { title: "Workflow AI", icon: "⚙️", description: "Processi automatizzati con intelligenza artificiale", color: "from-brand-red to-red-600" },
+    { title: "Backup Immutabile", icon: "☁️", description: "Sicurezza enterprise con blockchain e quantum encryption", color: "from-red-700 to-brand-red" }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-purple-50">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-red-50">
       {/* Premium Hero Section */}
       <section className="pt-32 pb-20 relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_30%_20%,rgba(196,30,58,0.1)_0%,transparent_50%)]"></div>
-          <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_80%,rgba(147,51,234,0.1)_0%,transparent_50%)]"></div>
+          <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_70%_80%,rgba(224,53,85,0.1)_0%,transparent_50%)]"></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-brand-red to-purple-600 text-white px-8 py-4 rounded-full text-sm font-bold mb-8 shadow-xl">
+            <div className="inline-flex items-center space-x-3 bg-gradient-to-r from-brand-red to-brand-red-light text-white px-8 py-4 rounded-full text-sm font-bold mb-8 shadow-xl">
               <div className="w-3 h-3 bg-white rounded-full animate-pulse"></div>
               <span>⚡ Funzionalità Next-Gen</span>
             </div>
             <h1 className="text-6xl lg:text-8xl font-black mb-8 text-gray-900 leading-tight">
               Il futuro della
               <br />
-              <span className="relative gradient-text bg-gradient-to-r from-brand-red via-purple-600 to-blue-600 bg-clip-text text-transparent">
+              <span className="relative gradient-text bg-gradient-to-r from-brand-red to-brand-red-light bg-clip-text text-transparent">
                 sicurezza aziendale
-                <div className="absolute -bottom-4 left-0 right-0 h-3 bg-gradient-to-r from-brand-red/30 via-purple-600/30 to-blue-600/30 rounded-full"></div>
+                <div className="absolute -bottom-4 left-0 right-0 h-3 bg-gradient-to-r from-brand-red/30 to-brand-red-light/30 rounded-full"></div>
               </span>
             </h1>
             <p className="text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed font-light">
@@ -77,7 +77,7 @@ const Functionality = () => {
                 }`}
               >
                 <div className={`space-y-10 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                  <div className="inline-flex items-center space-x-4 bg-gradient-to-r from-brand-red to-purple-600 text-white px-8 py-4 rounded-full shadow-xl">
+                  <div className="inline-flex items-center space-x-4 bg-gradient-to-r from-brand-red to-brand-red-light text-white px-8 py-4 rounded-full shadow-xl">
                     <span className="text-3xl">{feature.icon}</span>
                     <span className="font-bold text-lg">Tecnologia Premium</span>
                   </div>
@@ -93,13 +93,13 @@ const Functionality = () => {
                   <div className="grid grid-cols-2 gap-6">
                     {feature.features.map((item, itemIndex) => (
                       <div key={itemIndex} className="flex items-center space-x-4 bg-white p-4 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300">
-                        <div className="w-3 h-3 bg-gradient-to-r from-brand-red to-purple-600 rounded-full"></div>
+                        <div className="w-3 h-3 bg-gradient-to-r from-brand-red to-brand-red-light rounded-full"></div>
                         <span className="text-gray-700 font-semibold">{item}</span>
                       </div>
                     ))}
                   </div>
 
-                  <button className="group bg-gradient-to-r from-brand-red to-purple-600 text-white px-10 py-5 rounded-2xl font-bold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 relative overflow-hidden">
+                  <button className="group bg-gradient-to-r from-brand-red to-brand-red-light text-white px-10 py-5 rounded-2xl font-bold text-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105 relative overflow-hidden">
                     <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
                     <span className="relative flex items-center space-x-3">
                       <span>Scopri di Più</span>
@@ -119,10 +119,10 @@ const Functionality = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
                   </div>
-                  <div className="absolute -bottom-8 -right-8 w-24 h-24 bg-gradient-to-br from-brand-red to-purple-600 rounded-3xl flex items-center justify-center text-white text-4xl shadow-2xl border-4 border-white">
+                  <div className="absolute -bottom-8 -right-8 w-24 h-24 bg-gradient-to-br from-brand-red to-brand-red-light rounded-3xl flex items-center justify-center text-white text-4xl shadow-2xl border-4 border-white">
                     {feature.icon}
                   </div>
-                  <div className="absolute -top-8 -left-8 w-32 h-32 bg-gradient-to-br from-purple-600/20 to-blue-600/20 rounded-full blur-2xl"></div>
+                  <div className="absolute -top-8 -left-8 w-32 h-32 bg-gradient-to-br from-brand-red/20 to-brand-red-light/20 rounded-full blur-2xl"></div>
                 </div>
               </div>
             ))}
@@ -144,14 +144,14 @@ const Functionality = () => {
             {additionalFeatures.map((feature, index) => (
               <div
                 key={index}
-                className="group bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:scale-105 border-2 border-gray-100 hover:border-purple-200 text-center relative overflow-hidden"
+                className="group bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 hover:shadow-2xl transition-all duration-500 transform hover:scale-105 border-2 border-gray-100 hover:border-brand-red/20 text-center relative overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 to-blue-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-brand-red/5 to-brand-red-light/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative z-10">
                   <div className={`w-20 h-20 bg-gradient-to-br ${feature.color} rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-500 shadow-xl`}>
                     <span className="text-3xl">{feature.icon}</span>
                   </div>
-                  <h3 className="text-xl font-black text-gray-800 mb-4 group-hover:text-purple-600 transition-colors duration-300">
+                  <h3 className="text-xl font-black text-gray-800 mb-4 group-hover:text-brand-red transition-colors duration-300">
                     {feature.title}
                   </h3>
                   <p className="text-gray-600 leading-relaxed">
@@ -175,41 +175,41 @@ const Functionality = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-10">
-            <div className="group bg-white rounded-3xl p-10 shadow-2xl text-center hover:shadow-3xl transition-all duration-500 transform hover:scale-105 border-2 border-transparent hover:border-blue-200 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="group bg-white rounded-3xl p-10 shadow-2xl text-center hover:shadow-3xl transition-all duration-500 transform hover:scale-105 border-2 border-transparent hover:border-brand-red/20 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-brand-red/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative z-10">
-                <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-blue-700 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-xl group-hover:scale-110 transition-transform duration-500">
+                <div className="w-24 h-24 bg-gradient-to-br from-brand-red to-brand-red-light rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-xl group-hover:scale-110 transition-transform duration-500">
                   <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-black text-gray-800 mb-6 group-hover:text-blue-600 transition-colors duration-300">ERP Integration</h3>
+                <h3 className="text-2xl font-black text-gray-800 mb-6 group-hover:text-brand-red transition-colors duration-300">ERP Integration</h3>
                 <p className="text-gray-600 text-lg leading-relaxed">Sincronizzazione bidirezionale avanzata con SAP, Oracle, Microsoft Dynamics e sistemi ERP custom</p>
               </div>
             </div>
 
-            <div className="group bg-white rounded-3xl p-10 shadow-2xl text-center hover:shadow-3xl transition-all duration-500 transform hover:scale-105 border-2 border-transparent hover:border-green-200 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="group bg-white rounded-3xl p-10 shadow-2xl text-center hover:shadow-3xl transition-all duration-500 transform hover:scale-105 border-2 border-transparent hover:border-brand-red/20 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-brand-red/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative z-10">
-                <div className="w-24 h-24 bg-gradient-to-br from-green-500 to-green-700 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-xl group-hover:scale-110 transition-transform duration-500">
+                <div className="w-24 h-24 bg-gradient-to-br from-brand-red to-brand-red-light rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-xl group-hover:scale-110 transition-transform duration-500">
                   <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-black text-gray-800 mb-6 group-hover:text-green-600 transition-colors duration-300">API Next-Gen</h3>
+                <h3 className="text-2xl font-black text-gray-800 mb-6 group-hover:text-brand-red transition-colors duration-300">API Next-Gen</h3>
                 <p className="text-gray-600 text-lg leading-relaxed">API RESTful e GraphQL con rate limiting, webhooks real-time e SDK per sviluppi custom</p>
               </div>
             </div>
 
-            <div className="group bg-white rounded-3xl p-10 shadow-2xl text-center hover:shadow-3xl transition-all duration-500 transform hover:scale-105 border-2 border-transparent hover:border-purple-200 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="group bg-white rounded-3xl p-10 shadow-2xl text-center hover:shadow-3xl transition-all duration-500 transform hover:scale-105 border-2 border-transparent hover:border-brand-red/20 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-brand-red/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative z-10">
-                <div className="w-24 h-24 bg-gradient-to-br from-purple-500 to-purple-700 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-xl group-hover:scale-110 transition-transform duration-500">
+                <div className="w-24 h-24 bg-gradient-to-br from-brand-red to-brand-red-light rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-xl group-hover:scale-110 transition-transform duration-500">
                   <svg className="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-black text-gray-800 mb-6 group-hover:text-purple-600 transition-colors duration-300">Cloud Hybrid</h3>
+                <h3 className="text-2xl font-black text-gray-800 mb-6 group-hover:text-brand-red transition-colors duration-300">Cloud Hybrid</h3>
                 <p className="text-gray-600 text-lg leading-relaxed">Deployment multi-cloud su AWS, Azure, Google Cloud con auto-scaling e disaster recovery</p>
               </div>
             </div>
@@ -218,7 +218,7 @@ const Functionality = () => {
       </section>
 
       {/* Premium CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-brand-red via-purple-600 to-blue-600 text-white relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-brand-red to-brand-red-light text-white relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_20%_30%,rgba(255,255,255,0.1)_0%,transparent_50%)]"></div>
           <div className="absolute bottom-0 right-0 w-full h-full bg-[radial-gradient(circle_at_80%_70%,rgba(255,255,255,0.08)_0%,transparent_50%)]"></div>
@@ -233,7 +233,7 @@ const Functionality = () => {
             
             <div className="flex flex-col sm:flex-row gap-8 justify-center">
               <button className="group bg-white text-brand-red px-12 py-6 rounded-2xl font-bold text-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-brand-red/5 to-purple-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-brand-red/5 to-brand-red-light/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <span className="relative flex items-center justify-center space-x-3">
                   <span>Inizia Prova Gratuita</span>
                   <svg className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
