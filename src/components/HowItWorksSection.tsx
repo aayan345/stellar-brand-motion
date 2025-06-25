@@ -3,77 +3,140 @@ const HowItWorksSection = () => {
   const steps = [
     {
       number: "1",
-      title: "Carica Dati",
-      description: "Caricamento semplificato e gestione dei documenti aziendali",
-      icon: "📊",
-      color: "from-brand-red to-brand-red-light"
+      title: "Ricevi la Consulenza",
+      description: "Consulenza personalizzata per identificare le tue esigenze specifiche e definire la strategia migliore per la tua azienda.",
+      icon: "💬",
+      delay: "animate-delay-100"
     },
     {
       number: "2", 
-      title: "Struttura Conformità",
-      description: "Organizzazione completa processi e conformità normativa",
-      icon: "📋",
-      color: "from-brand-red to-brand-red-light"
+      title: "Carica i Dati",
+      description: "Caricamento semplificato e sicuro di tutti i tuoi documenti aziendali in un ambiente protetto e organizzato.",
+      icon: "📊",
+      delay: "animate-delay-200"
     },
     {
       number: "3",
-      title: "Ricevi Avvisi", 
-      description: "Notifiche tempestive e promemoria automatici",
-      icon: "⚠️",
-      color: "from-brand-red to-brand-red-light"
+      title: "Verifica Conformità", 
+      description: "Analisi automatica della conformità normativa con controlli intelligenti e identificazione delle aree di miglioramento.",
+      icon: "✅",
+      delay: "animate-delay-300"
     },
     {
       number: "4",
-      title: "Archivia & Report",
-      description: "Documentazione avanzata e reportistica per controlli",
-      icon: "📈",
-      color: "from-brand-red to-brand-red-light"
+      title: "Attivazione Piattaforma",
+      description: "Configurazione completa della piattaforma con tutti gli strumenti personalizzati per le tue necessità operative.",
+      icon: "🚀",
+      delay: "animate-delay-400"
+    },
+    {
+      number: "5",
+      title: "Pensiamo a Tutto Noi",
+      description: "Non devi più fare nulla. La piattaforma ti avviserà al momento opportuno.",
+      icon: "🧘‍♂️",
+      delay: "animate-delay-500",
+      special: true
     }
   ];
 
   return (
-    <section className="py-20 bg-white relative overflow-hidden">
+    <section className="py-32 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-brand-red rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-brand-red-light rounded-full blur-3xl"></div>
+      </div>
+
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 bg-brand-red text-white px-6 py-3 rounded-full text-sm font-semibold mb-8">
-            <span>🚀 Semplificato Processo</span>
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-brand-red to-brand-red-light text-white px-8 py-4 rounded-full text-sm font-bold mb-8 shadow-2xl animate-pulse-glow">
+            <span>✨ Processo Innovativo</span>
           </div>
-          <h2 className="text-4xl lg:text-5xl font-black mb-6 text-brand-red">
+          <h2 className="text-5xl lg:text-6xl font-black mb-8 bg-gradient-to-r from-brand-red to-brand-red-light bg-clip-text text-transparent">
             Come Funziona
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Tutela Impresa rende semplice ed intuitivo ogni sistema intelligente che semplifica la gestione normativa.
+            Un processo semplice e automatizzato che trasforma la gestione della sicurezza aziendale in un'esperienza fluida e senza stress.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {steps.map((step, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-3xl p-8 relative group hover:shadow-2xl transition-all duration-500 transform hover:scale-105 border border-gray-100 text-center"
-            >
-              {/* Step Number */}
-              <div className="w-16 h-16 bg-brand-red text-white rounded-2xl flex items-center justify-center font-black text-xl shadow-lg mx-auto mb-6">
-                {step.number}
-              </div>
+        {/* Steps Grid */}
+        <div className="relative">
+          {/* Connection Line */}
+          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-brand-red via-brand-red-light to-brand-red opacity-20 transform -translate-y-1/2 z-0"></div>
+          
+          <div className="grid lg:grid-cols-5 gap-8 relative z-10">
+            {steps.map((step, index) => (
+              <div
+                key={index}
+                className={`group animate-slide-in-right ${step.delay} opacity-0`}
+              >
+                {/* Step Card */}
+                <div className={`
+                  relative bg-white rounded-3xl p-8 text-center
+                  hover:shadow-2xl hover:shadow-brand-red/20 
+                  transition-all duration-700 transform hover:scale-105 hover:-translate-y-2
+                  border border-gray-100
+                  ${step.special ? 'ring-2 ring-brand-red ring-opacity-30' : ''}
+                `}>
+                  
+                  {/* Glow Effect */}
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-brand-red/10 to-brand-red-light/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
+                  
+                  {/* Step Number */}
+                  <div className="relative w-16 h-16 bg-gradient-to-r from-brand-red to-brand-red-light text-white rounded-2xl flex items-center justify-center font-black text-xl shadow-lg mx-auto mb-6 group-hover:shadow-brand-red/40 transition-shadow duration-300">
+                    {step.number}
+                  </div>
 
-              {/* Icon */}
-              <div className="text-4xl mb-4">
-                {step.icon}
-              </div>
+                  {/* Icon */}
+                  <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                    {step.icon}
+                  </div>
 
-              {/* Content */}
-              <h3 className="text-lg font-black text-gray-800 mb-4">
-                {step.title}
-              </h3>
-              <p className="text-gray-600 leading-relaxed mb-6 text-sm">
-                {step.description}
-              </p>
-              <button className="bg-gradient-to-r from-brand-red to-brand-red-light text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300 transform hover:scale-105 w-full">
-                Scopri di più →
-              </button>
-            </div>
-          ))}
+                  {/* Content */}
+                  <h3 className="text-xl font-black text-gray-800 mb-4 group-hover:text-brand-red transition-colors duration-300">
+                    {step.title}
+                  </h3>
+                  
+                  <p className="text-gray-600 leading-relaxed text-sm group-hover:text-gray-700 transition-colors duration-300">
+                    {step.description}
+                  </p>
+
+                  {/* Special Badge for Last Step */}
+                  {step.special && (
+                    <div className="absolute -top-3 -right-3 bg-gradient-to-r from-brand-red to-brand-red-light text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg animate-pulse">
+                      Finale
+                    </div>
+                  )}
+                </div>
+
+                {/* Step Connector Arrow (Hidden on Mobile) */}
+                {index < steps.length - 1 && (
+                  <div className="hidden lg:flex justify-center items-center absolute top-1/2 -right-4 transform -translate-y-1/2 z-20">
+                    <div className="w-8 h-8 bg-gradient-to-r from-brand-red to-brand-red-light rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="text-center mt-20">
+          <div className="inline-flex flex-col items-center space-y-4 bg-white p-8 rounded-3xl shadow-2xl border border-gray-100 hover:shadow-brand-red/20 transition-all duration-500">
+            <div className="text-4xl mb-2">🎯</div>
+            <h3 className="text-2xl font-black text-brand-red mb-2">Pronto a Iniziare?</h3>
+            <p className="text-gray-600 mb-6 max-w-md">
+              Trasforma la gestione della sicurezza aziendale in un processo automatico e senza stress.
+            </p>
+            <button className="bg-gradient-to-r from-brand-red to-brand-red-light text-white px-10 py-4 rounded-xl font-bold text-lg hover:shadow-2xl hover:shadow-brand-red/40 transition-all duration-300 transform hover:scale-105">
+              Inizia Subito →
+            </button>
+          </div>
         </div>
       </div>
     </section>
