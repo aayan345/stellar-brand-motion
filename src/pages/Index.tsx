@@ -4,6 +4,7 @@ import HSEManagementSection from '../components/HSEManagementSection';
 import OnePlatformSection from '../components/OnePlatformSection';
 import InspectionSection from '../components/InspectionSection';
 import HowItWorksSection from '../components/HowItWorksSection';
+import TutelaImpresaSection from '../components/TutelaImpresaSection';
 import PricingCTASection from '../components/PricingCTASection';
 import VideoSection from '../components/VideoSection';
 import ContactFormSection from '../components/ContactFormSection';
@@ -56,6 +57,7 @@ const Index = () => {
         <OnePlatformSection />
         <InspectionSection />
         <HowItWorksSection />
+        <TutelaImpresaSection />
         <PricingCTASection />
         <VideoSection />
         <ContactFormSection />

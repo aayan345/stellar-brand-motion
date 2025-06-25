@@ -73,15 +73,19 @@ const HowItWorksSection = () => {
               >
                 {/* Step Card */}
                 <div className={`
-                  relative bg-white rounded-3xl p-8 text-center
-                  hover:shadow-2xl hover:shadow-brand-red/20 
+                  relative bg-white bg-opacity-80 backdrop-blur-sm rounded-3xl p-8 text-center
+                  shadow-lg shadow-brand-red/10
+                  hover:shadow-2xl hover:shadow-brand-red/30 
                   transition-all duration-700 transform hover:scale-105 hover:-translate-y-2
-                  border border-gray-100
+                  border border-brand-red/10
                   ${step.special ? 'ring-2 ring-brand-red ring-opacity-30' : ''}
                 `}>
                   
-                  {/* Glow Effect */}
-                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-brand-red/10 to-brand-red-light/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
+                  {/* Base Glow Effect */}
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-brand-red/5 to-brand-red-light/5 opacity-100"></div>
+                  
+                  {/* Hover Glow Effect */}
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-brand-red/20 to-brand-red-light/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
                   
                   {/* Step Number */}
                   <div className="relative w-16 h-16 bg-gradient-to-r from-brand-red to-brand-red-light text-white rounded-2xl flex items-center justify-center font-black text-xl shadow-lg mx-auto mb-6 group-hover:shadow-brand-red/40 transition-shadow duration-300">
