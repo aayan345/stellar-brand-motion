@@ -60,65 +60,74 @@ const HowItWorksSection = () => {
           </p>
         </div>
 
-        {/* Steps */}
-        <div className="space-y-12">
-          {steps.map((step, index) => (
-            <div
-              key={index}
-              className={`group animate-slide-in-right ${step.delay} opacity-0`}
-            >
-              <div className={`
-                relative bg-white rounded-3xl p-10 
-                shadow-xl shadow-brand-red/10
-                border border-gray-100
-                hover:shadow-2xl hover:shadow-brand-red/25 
-                transition-all duration-700 transform hover:scale-[1.02] hover:-translate-y-2
-                ${step.special ? 'ring-2 ring-brand-red ring-opacity-30' : ''}
-              `}>
-                
-                {/* Base Glow Effect - Always visible */}
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-brand-red/5 to-brand-red-light/5 opacity-100 transition-opacity duration-500"></div>
-                
-                {/* Enhanced Hover Glow */}
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-brand-red/15 to-brand-red-light/15 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
-                
-                <div className="flex items-center space-x-8 relative z-10">
+        {/* Steps Grid */}
+        <div className="relative">
+          {/* Connection Line */}
+          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-brand-red via-brand-red-light to-brand-red opacity-20 transform -translate-y-1/2 z-0"></div>
+          
+          <div className="grid lg:grid-cols-5 gap-8 relative z-10">
+            {steps.map((step, index) => (
+              <div
+                key={index}
+                className={`group animate-slide-in-right ${step.delay} opacity-0`}
+              >
+                {/* Step Card */}
+                <div className={`
+                  relative bg-white rounded-3xl p-8 text-center
+                  hover:shadow-2xl hover:shadow-brand-red/20 
+                  transition-all duration-700 transform hover:scale-105 hover:-translate-y-2
+                  border border-gray-100
+                  ${step.special ? 'ring-2 ring-brand-red ring-opacity-30' : ''}
+                `}>
+                  
+                  {/* Glow Effect */}
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-brand-red/10 to-brand-red-light/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
+                  
                   {/* Step Number */}
-                  <div className="flex-shrink-0 w-20 h-20 bg-gradient-to-r from-brand-red to-brand-red-light text-white rounded-2xl flex items-center justify-center font-black text-2xl shadow-lg group-hover:shadow-brand-red/40 transition-all duration-300 group-hover:scale-110">
+                  <div className="relative w-16 h-16 bg-gradient-to-r from-brand-red to-brand-red-light text-white rounded-2xl flex items-center justify-center font-black text-xl shadow-lg mx-auto mb-6 group-hover:shadow-brand-red/40 transition-shadow duration-300">
                     {step.number}
                   </div>
 
                   {/* Icon */}
-                  <div className="flex-shrink-0 text-6xl group-hover:scale-110 transition-transform duration-300">
+                  <div className="text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
                     {step.icon}
                   </div>
 
                   {/* Content */}
-                  <div className="flex-1">
-                    <h3 className="text-3xl font-black text-gray-800 mb-4 group-hover:text-brand-red transition-colors duration-300">
-                      {step.title}
-                    </h3>
-                    
-                    <p className="text-gray-600 leading-relaxed text-lg group-hover:text-gray-700 transition-colors duration-300">
-                      {step.description}
-                    </p>
-                  </div>
+                  <h3 className="text-xl font-black text-gray-800 mb-4 group-hover:text-brand-red transition-colors duration-300">
+                    {step.title}
+                  </h3>
+                  
+                  <p className="text-gray-600 leading-relaxed text-sm group-hover:text-gray-700 transition-colors duration-300">
+                    {step.description}
+                  </p>
+
+                  {/* Special Badge for Last Step */}
+                  {step.special && (
+                    <div className="absolute -top-3 -right-3 bg-gradient-to-r from-brand-red to-brand-red-light text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg animate-pulse">
+                      Finale
+                    </div>
+                  )}
                 </div>
 
-                {/* Special Badge for Last Step */}
-                {step.special && (
-                  <div className="absolute -top-3 -right-3 bg-gradient-to-r from-brand-red to-brand-red-light text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg animate-pulse">
-                    Finale
+                {/* Step Connector Arrow (Hidden on Mobile) */}
+                {index < steps.length - 1 && (
+                  <div className="hidden lg:flex justify-center items-center absolute top-1/2 -right-4 transform -translate-y-1/2 z-20">
+                    <div className="w-8 h-8 bg-gradient-to-r from-brand-red to-brand-red-light rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
+                      <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </div>
                   </div>
                 )}
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         {/* Bottom CTA */}
         <div className="text-center mt-20">
-          <div className="inline-flex flex-col items-center space-y-4 bg-white p-8 rounded-3xl shadow-2xl shadow-brand-red/10 border border-gray-100 hover:shadow-brand-red/20 transition-all duration-500">
+          <div className="inline-flex flex-col items-center space-y-4 bg-white p-8 rounded-3xl shadow-2xl border border-gray-100 hover:shadow-brand-red/20 transition-all duration-500">
             <div className="text-4xl mb-2">🎯</div>
             <h3 className="text-2xl font-black text-brand-red mb-2">Pronto a Iniziare?</h3>
             <p className="text-gray-600 mb-6 max-w-md">
