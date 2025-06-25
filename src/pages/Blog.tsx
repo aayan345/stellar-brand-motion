@@ -1,52 +1,58 @@
 const Blog = () => {
   const blogPosts = [
     {
-      title: "Le Nuove Normative HSE 2024: Cosa Cambia per le Aziende",
-      excerpt: "Analisi completa delle modifiche normative in materia di sicurezza sul lavoro e ambiente per il 2024",
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Normative",
-      readTime: "5 min",
-      date: "15 Marzo 2024"
-    },
-    {
-      title: "Digitalizzazione dei Processi HSE: Guida Completa",
-      excerpt: "Come trasformare digitalmente i processi di Health, Safety & Environment nella tua azienda",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Tecnologia",
-      readTime: "8 min",
-      date: "12 Marzo 2024"
-    },
-    {
-      title: "ROI della Sicurezza: Come Calcolare il Ritorno sull'Investimento",
-      excerpt: "Metodologie e strumenti per quantificare i benefici economici degli investimenti in sicurezza",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Business",
-      readTime: "6 min",
-      date: "10 Marzo 2024"
-    },
-    {
-      title: "Gestione delle Emergency Response: Best Practices",
-      excerpt: "Strategie avanzate per la gestione delle emergenze e la continuità operativa aziendale",
-      image: "https://images.unsplash.com/photo-1584464491033-06628f3a6b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      title: "La Rivoluzione della Sicurezza Digitale in Azienda",
+      excerpt: "Come la digitalizzazione sta trasformando la gestione della sicurezza sul lavoro e quali vantaggi porta alle imprese moderne.",
+      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       category: "Sicurezza",
+      readTime: "5 min",
+      date: "15 Dic 2024",
+      author: "Marco Rossi"
+    },
+    {
+      title: "Conformità Normativa: Guida Completa 2024",
+      excerpt: "Tutto quello che devi sapere sui nuovi adempimenti normativi e come Tutela Impresa ti aiuta a rimanere sempre conforme.",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      category: "Normative",
+      readTime: "8 min",
+      date: "12 Dic 2024",
+      author: "Laura Bianchi"
+    },
+    {
+      title: "Ispezioni: Come Essere Sempre Pronti",
+      excerpt: "Strategie e best practice per affrontare le ispezioni con sicurezza e documentazione sempre aggiornata.",
+      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      category: "Ispezioni",
+      readTime: "6 min",
+      date: "10 Dic 2024",
+      author: "Giuseppe Verdi"
+    },
+    {
+      title: "ROI della Sicurezza: Investimento che Ripaga",
+      excerpt: "Analisi dei benefici economici derivanti da un sistema di gestione della sicurezza efficiente e digitalizzato.",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      category: "Business",
       readTime: "7 min",
-      date: "8 Marzo 2024"
+      date: "8 Dic 2024",
+      author: "Anna Ferrari"
     },
     {
-      title: "Audit Interni HSE: Metodologie e Strumenti Digitali",
-      excerpt: "Come condurre audit efficaci utilizzando le moderne tecnologie digitali",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-      category: "Audit",
+      title: "Tecnologia e Prevenzione: Il Futuro è Ora",
+      excerpt: "Come l'intelligenza artificiale e l'IoT stanno rivoluzionando la prevenzione degli incidenti sul lavoro.",
+      image: "https://images.unsplash.com/photo-1518186285589-2f7649de83e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+      category: "Tecnologia",
       readTime: "9 min",
-      date: "5 Marzo 2024"
+      date: "5 Dic 2024",
+      author: "Roberto Lombardi"
     },
     {
-      title: "Training Digitale HSE: Il Futuro della Formazione",
-      excerpt: "Innovazioni nella formazione digitale per la sicurezza sul lavoro e l'ambiente",
-      image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+      title: "Formazione del Personale: Strategie Vincenti",
+      excerpt: "Come creare un programma di formazione efficace per la sicurezza sul lavoro che coinvolga tutti i livelli aziendali.",
+      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       category: "Formazione",
       readTime: "6 min",
-      date: "2 Marzo 2024"
+      date: "3 Dic 2024",
+      author: "Chiara Romano"
     }
   ];
 

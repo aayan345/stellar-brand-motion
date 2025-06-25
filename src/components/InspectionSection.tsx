@@ -7,15 +7,33 @@ const InspectionSection = () => {
           {/* Left Content */}
           <div className="space-y-8">
             <h2 className="text-5xl lg:text-6xl font-black leading-tight">
-              Ispezione in arrivo?<br />
-              <span className="text-yellow-300">Respira</span><br />
-              <span className="text-yellow-300">Clicca</span><br />
-              <span className="text-yellow-300">Risolto</span>
+              Ispezione in arrivo?
             </h2>
+            
+            {/* Enhanced animated keywords */}
+            <div className="space-y-4">
+              <div className="animate-slide-in-right animate-delay-200">
+                <span className="inline-block text-6xl lg:text-7xl font-black text-yellow-300 drop-shadow-2xl transform hover:scale-110 transition-all duration-300 cursor-default">
+                  Respira
+                </span>
+              </div>
+              
+              <div className="animate-slide-in-right animate-delay-400">
+                <span className="inline-block text-6xl lg:text-7xl font-black text-yellow-300 drop-shadow-2xl transform hover:scale-110 transition-all duration-300 cursor-default">
+                  Clicca
+                </span>
+              </div>
+              
+              <div className="animate-slide-in-right animate-delay-500">
+                <span className="inline-block text-6xl lg:text-7xl font-black text-yellow-300 drop-shadow-2xl transform hover:scale-110 transition-all duration-300 cursor-default">
+                  Risolto
+                </span>
+              </div>
+            </div>
           </div>
 
           {/* Right Content */}
-          <div className="space-y-6">
+          <div className="space-y-6 animate-slide-in-right animate-delay-300">
             <p className="text-xl leading-relaxed">
               Con Tutela Impresa, anche <strong>il controllo più improvviso diventa un non-evento.</strong>
             </p>
