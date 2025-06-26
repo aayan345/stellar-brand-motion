@@ -9,7 +9,7 @@ const TutelaImpresaSection = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center max-w-5xl mx-auto">
+        <div className="text-center max-w-5xl mx-auto animate-slide-in-right animate-delay-100 opacity-0">
           {/* Main Heading */}
           <h2 className="text-6xl lg:text-7xl font-black mb-12 bg-gradient-to-r from-brand-red to-brand-red-light bg-clip-text text-transparent leading-tight">
             Tutela Impresa 100%

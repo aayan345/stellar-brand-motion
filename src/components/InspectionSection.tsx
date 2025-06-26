@@ -5,7 +5,7 @@ const InspectionSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
-          <div className="space-y-8">
+          <div className="space-y-8 animate-slide-in-right animate-delay-100 opacity-0">
             <h2 className="text-5xl lg:text-6xl font-black leading-tight">
               Ispezione in arrivo?
             </h2>
@@ -33,7 +33,7 @@ const InspectionSection = () => {
           </div>
 
           {/* Right Content */}
-          <div className="space-y-6 animate-slide-in-right animate-delay-300">
+          <div className="space-y-6 animate-slide-in-right animate-delay-300 opacity-0">
             <p className="text-xl leading-relaxed">
               Con Tutela Impresa, anche <strong>il controllo più improvviso diventa un non-evento.</strong>
             </p>
