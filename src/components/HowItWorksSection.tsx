@@ -187,7 +187,7 @@ const HowItWorksSection = () => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .card-hidden {
           opacity: 0;
           transform: translateX(100px);
