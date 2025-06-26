@@ -40,36 +40,64 @@ const HowItWorksSection = () => {
   ];
 
   useEffect(() => {
-    // Create individual observers for each card
     const observers: IntersectionObserver[] = [];
+    const isMobile = window.innerWidth < 1024;
 
-    cardsRef.current.forEach((card, index) => {
-      if (card) {
+    if (isMobile) {
+      // Mobile: Individual card observers
+      cardsRef.current.forEach((card, index) => {
+        if (card) {
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  const cardElement = entry.target as HTMLElement;
+                  cardElement.classList.remove('card-hidden-mobile');
+                  cardElement.classList.add('card-visible-mobile');
+                }
+                // Don't reset animation when scrolling away - cards stay visible
+              });
+            },
+            { 
+              threshold: 0.3,
+              rootMargin: '0px 0px -50px 0px'
+            }
+          );
+
+          observer.observe(card);
+          observers.push(observer);
+        }
+      });
+    } else {
+      // Desktop: Section-based observer for all cards at once
+      if (sectionRef.current) {
         const observer = new IntersectionObserver(
           (entries) => {
             entries.forEach((entry) => {
               if (entry.isIntersecting) {
-                const cardElement = entry.target as HTMLElement;
-                cardElement.classList.remove('card-hidden');
-                cardElement.classList.add('card-visible');
-              } else {
-                // Reset animation when card goes out of view
-                const cardElement = entry.target as HTMLElement;
-                cardElement.classList.remove('card-visible');
-                cardElement.classList.add('card-hidden');
+                // Animate all cards at once with staggered delays
+                cardsRef.current.forEach((card, index) => {
+                  if (card) {
+                    setTimeout(() => {
+                      card.classList.remove('card-hidden-desktop');
+                      card.classList.add('card-visible-desktop');
+                    }, index * 150); // Staggered animation
+                  }
+                });
               }
+              // Don't reset animation when scrolling away - cards stay visible
             });
           },
           { 
-            threshold: 0.6, // Card needs to be 60% visible before animating
-            rootMargin: '0px 0px -100px 0px' // Only trigger when card is well into viewport
+            threshold: 0.2, // Trigger earlier on desktop
+            rootMargin: '0px 0px -100px 0px'
           }
         );
 
-        observer.observe(card);
+        observer.observe(sectionRef.current);
         observers.push(observer);
       }
-    });
+    }
 
     return () => {
       observers.forEach(observer => observer.disconnect());
@@ -112,7 +140,7 @@ const HowItWorksSection = () => {
                 ref={(el) => {
                   if (el) cardsRef.current[index] = el;
                 }}
-                className="group card-hidden"
+                className="group card-hidden-mobile lg:card-hidden-desktop"
               >
                 {/* Step Card */}
                 <div className={`
@@ -188,21 +216,47 @@ const HowItWorksSection = () => {
       </div>
 
       <style>{`
-        .card-hidden {
+        /* Mobile Animations */
+        .card-hidden-mobile {
           opacity: 0;
           transform: translateX(100px);
           transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
         
-        .card-visible {
+        .card-visible-mobile {
           opacity: 1;
           transform: translateX(0);
           transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
+
+        /* Desktop Animations */
+        .card-hidden-desktop {
+          opacity: 0;
+          transform: translateY(50px);
+          transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
         
+        .card-visible-desktop {
+          opacity: 1;
+          transform: translateY(0);
+          transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
         @media (max-width: 1023px) {
-          .card-hidden {
-            transform: translateX(150px);
+          .card-hidden-desktop {
+            display: none;
+          }
+          .card-visible-desktop {
+            display: none;
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .card-hidden-mobile {
+            display: none;
+          }
+          .card-visible-mobile {
+            display: none;
           }
         }
       `}</style>
