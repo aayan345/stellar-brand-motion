@@ -50,15 +50,19 @@ const HowItWorksSection = () => {
             entries.forEach((entry) => {
               if (entry.isIntersecting) {
                 const cardElement = entry.target as HTMLElement;
-                cardElement.style.animation = 'none';
-                cardElement.offsetHeight; // Trigger reflow
-                cardElement.style.animation = 'slide-in-right 0.6s ease-out forwards';
+                cardElement.classList.remove('card-hidden');
+                cardElement.classList.add('card-visible');
+              } else {
+                // Reset animation when card goes out of view
+                const cardElement = entry.target as HTMLElement;
+                cardElement.classList.remove('card-visible');
+                cardElement.classList.add('card-hidden');
               }
             });
           },
           { 
-            threshold: 0.3,
-            rootMargin: '-50px 0px -50px 0px'
+            threshold: 0.6, // Card needs to be 60% visible before animating
+            rootMargin: '0px 0px -100px 0px' // Only trigger when card is well into viewport
           }
         );
 
@@ -108,7 +112,7 @@ const HowItWorksSection = () => {
                 ref={(el) => {
                   if (el) cardsRef.current[index] = el;
                 }}
-                className="group opacity-0 translate-x-full"
+                className="group card-hidden"
               >
                 {/* Step Card */}
                 <div className={`
@@ -182,6 +186,26 @@ const HowItWorksSection = () => {
           </div>
         </div>
       </div>
+
+      <style jsx>{`
+        .card-hidden {
+          opacity: 0;
+          transform: translateX(100px);
+          transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        .card-visible {
+          opacity: 1;
+          transform: translateX(0);
+          transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+        
+        @media (max-width: 1023px) {
+          .card-hidden {
+            transform: translateX(150px);
+          }
+        }
+      `}</style>
     </section>
   );
 };
