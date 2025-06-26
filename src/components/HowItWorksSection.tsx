@@ -8,7 +8,7 @@ const HowItWorksSection = () => {
   const steps = [
     {
       number: "1",
-      title: "Ricevi la Consulenza",
+      title: "Ricevi Consulenza",
       description: "Consulenza personalizzata per identificare le tue esigenze specifiche e definire la strategia migliore per la tua azienda.",
       icon: "💬",
     },
@@ -26,13 +26,13 @@ const HowItWorksSection = () => {
     },
     {
       number: "4",
-      title: "Attivazione Piattaforma",
+      title: "Attiva Piattaforma",
       description: "Configurazione completa della piattaforma con tutti gli strumenti personalizzati per le tue necessità operative.",
       icon: "🚀",
     },
     {
       number: "5",
-      title: "Pensiamo a Tutto Noi",
+      title: "Pensiamo a Tutto",
       description: "Non devi più fare nulla. La piattaforma ti avviserà al momento opportuno.",
       icon: "🧘‍♂️",
       special: true
@@ -40,28 +40,36 @@ const HowItWorksSection = () => {
   ];
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            cardsRef.current.forEach((card, index) => {
-              if (card) {
-                card.style.animation = 'none';
-                card.offsetHeight; // Trigger reflow
-                card.style.animation = `slide-in-right 0.6s ease-out ${index * 0.2}s forwards`;
+    // Create individual observers for each card
+    const observers: IntersectionObserver[] = [];
+
+    cardsRef.current.forEach((card, index) => {
+      if (card) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const cardElement = entry.target as HTMLElement;
+                cardElement.style.animation = 'none';
+                cardElement.offsetHeight; // Trigger reflow
+                cardElement.style.animation = 'slide-in-right 0.6s ease-out forwards';
               }
             });
+          },
+          { 
+            threshold: 0.3,
+            rootMargin: '-50px 0px -50px 0px'
           }
-        });
-      },
-      { threshold: 0.2 }
-    );
+        );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+        observer.observe(card);
+        observers.push(observer);
+      }
+    });
 
-    return () => observer.disconnect();
+    return () => {
+      observers.forEach(observer => observer.disconnect());
+    };
   }, []);
 
   return (
@@ -104,7 +112,7 @@ const HowItWorksSection = () => {
               >
                 {/* Step Card */}
                 <div className={`
-                  relative bg-white bg-opacity-90 backdrop-blur-sm rounded-3xl p-8 text-center
+                  relative bg-white bg-opacity-90 backdrop-blur-sm rounded-3xl p-8 text-center h-full
                   shadow-lg shadow-brand-red/10
                   hover:shadow-2xl hover:shadow-brand-red/30 
                   transition-all duration-700 transform hover:scale-105 hover:-translate-y-2
@@ -129,7 +137,7 @@ const HowItWorksSection = () => {
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-xl font-black text-gray-800 mb-4 group-hover:text-brand-red transition-colors duration-300">
+                  <h3 className="text-xl font-black text-gray-800 mb-4 group-hover:text-brand-red transition-colors duration-300 min-h-[3.5rem] flex items-center justify-center">
                     {step.title}
                   </h3>
                   
