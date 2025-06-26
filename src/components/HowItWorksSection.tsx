@@ -1,46 +1,74 @@
 
+import { useEffect, useRef } from 'react';
+
 const HowItWorksSection = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const cardsRef = useRef<HTMLDivElement[]>([]);
+
   const steps = [
     {
       number: "1",
       title: "Ricevi la Consulenza",
       description: "Consulenza personalizzata per identificare le tue esigenze specifiche e definire la strategia migliore per la tua azienda.",
       icon: "💬",
-      delay: "animate-delay-100"
     },
     {
       number: "2", 
       title: "Carica i Dati",
       description: "Caricamento semplificato e sicuro di tutti i tuoi documenti aziendali in un ambiente protetto e organizzato.",
       icon: "📊",
-      delay: "animate-delay-200"
     },
     {
       number: "3",
       title: "Verifica Conformità", 
       description: "Analisi automatica della conformità normativa con controlli intelligenti e identificazione delle aree di miglioramento.",
       icon: "✅",
-      delay: "animate-delay-300"
     },
     {
       number: "4",
       title: "Attivazione Piattaforma",
       description: "Configurazione completa della piattaforma con tutti gli strumenti personalizzati per le tue necessità operative.",
       icon: "🚀",
-      delay: "animate-delay-400"
     },
     {
       number: "5",
       title: "Pensiamo a Tutto Noi",
       description: "Non devi più fare nulla. La piattaforma ti avviserà al momento opportuno.",
       icon: "🧘‍♂️",
-      delay: "animate-delay-500",
       special: true
     }
   ];
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            cardsRef.current.forEach((card, index) => {
+              if (card) {
+                card.style.animation = 'none';
+                card.offsetHeight; // Trigger reflow
+                card.style.animation = `slide-in-right 0.6s ease-out ${index * 0.2}s forwards`;
+              }
+            });
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="py-32 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+    <section 
+      ref={sectionRef}
+      className="py-32 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden"
+    >
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-10 w-72 h-72 bg-brand-red rounded-full blur-3xl"></div>
@@ -69,11 +97,14 @@ const HowItWorksSection = () => {
             {steps.map((step, index) => (
               <div
                 key={index}
-                className={`group animate-slide-in-right ${step.delay} opacity-0`}
+                ref={(el) => {
+                  if (el) cardsRef.current[index] = el;
+                }}
+                className="group opacity-0 translate-x-full"
               >
                 {/* Step Card */}
                 <div className={`
-                  relative bg-white bg-opacity-80 backdrop-blur-sm rounded-3xl p-8 text-center
+                  relative bg-white bg-opacity-90 backdrop-blur-sm rounded-3xl p-8 text-center
                   shadow-lg shadow-brand-red/10
                   hover:shadow-2xl hover:shadow-brand-red/30 
                   transition-all duration-700 transform hover:scale-105 hover:-translate-y-2
@@ -82,7 +113,7 @@ const HowItWorksSection = () => {
                 `}>
                   
                   {/* Base Glow Effect */}
-                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-brand-red/5 to-brand-red-light/5 opacity-100"></div>
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-brand-red/10 to-brand-red-light/10 opacity-100"></div>
                   
                   {/* Hover Glow Effect */}
                   <div className="absolute inset-0 rounded-3xl bg-gradient-to-r from-brand-red/20 to-brand-red-light/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>

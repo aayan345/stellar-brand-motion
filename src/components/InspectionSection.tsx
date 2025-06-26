@@ -1,30 +1,98 @@
 
+import { useEffect, useRef } from 'react';
+
 const InspectionSection = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const leftContentRef = useRef<HTMLDivElement>(null);
+  const rightContentRef = useRef<HTMLDivElement>(null);
+  const keywordsRef = useRef<HTMLDivElement[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Animate left content
+            if (leftContentRef.current) {
+              leftContentRef.current.style.animation = 'none';
+              leftContentRef.current.offsetHeight; // Trigger reflow
+              leftContentRef.current.style.animation = 'slide-in-right 0.6s ease-out forwards';
+            }
+            
+            // Animate right content
+            if (rightContentRef.current) {
+              rightContentRef.current.style.animation = 'none';
+              rightContentRef.current.offsetHeight; // Trigger reflow
+              rightContentRef.current.style.animation = 'slide-in-right 0.6s ease-out 0.2s forwards';
+            }
+
+            // Animate keywords individually
+            keywordsRef.current.forEach((keyword, index) => {
+              if (keyword) {
+                keyword.style.animation = 'none';
+                keyword.offsetHeight; // Trigger reflow
+                keyword.style.animation = `slide-in-right 0.6s ease-out ${0.3 + index * 0.2}s forwards`;
+              }
+            });
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="py-20 bg-gradient-to-br from-brand-red via-brand-red-light to-brand-red text-white relative overflow-hidden">
+    <section 
+      ref={sectionRef}
+      className="py-20 bg-gradient-to-br from-brand-red via-brand-red-light to-brand-red text-white relative overflow-hidden"
+    >
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
-          <div className="space-y-8 animate-slide-in-right animate-delay-100 opacity-0">
+          <div 
+            ref={leftContentRef}
+            className="space-y-8 opacity-0 translate-x-full"
+          >
             <h2 className="text-5xl lg:text-6xl font-black leading-tight">
               Ispezione in arrivo?
             </h2>
             
             {/* Enhanced animated keywords */}
             <div className="space-y-4">
-              <div className="animate-slide-in-right animate-delay-200">
+              <div 
+                ref={(el) => {
+                  if (el) keywordsRef.current[0] = el;
+                }}
+                className="opacity-0 translate-x-full"
+              >
                 <span className="inline-block text-6xl lg:text-7xl font-black text-yellow-300 drop-shadow-2xl transform hover:scale-110 transition-all duration-300 cursor-default">
                   Respira
                 </span>
               </div>
               
-              <div className="animate-slide-in-right animate-delay-400">
+              <div 
+                ref={(el) => {
+                  if (el) keywordsRef.current[1] = el;
+                }}
+                className="opacity-0 translate-x-full"
+              >
                 <span className="inline-block text-6xl lg:text-7xl font-black text-yellow-300 drop-shadow-2xl transform hover:scale-110 transition-all duration-300 cursor-default">
                   Clicca
                 </span>
               </div>
               
-              <div className="animate-slide-in-right animate-delay-500">
+              <div 
+                ref={(el) => {
+                  if (el) keywordsRef.current[2] = el;
+                }}
+                className="opacity-0 translate-x-full"
+              >
                 <span className="inline-block text-6xl lg:text-7xl font-black text-yellow-300 drop-shadow-2xl transform hover:scale-110 transition-all duration-300 cursor-default">
                   Risolto
                 </span>
@@ -33,7 +101,10 @@ const InspectionSection = () => {
           </div>
 
           {/* Right Content */}
-          <div className="space-y-6 animate-slide-in-right animate-delay-300 opacity-0">
+          <div 
+            ref={rightContentRef}
+            className="space-y-6 opacity-0 translate-x-full"
+          >
             <p className="text-xl leading-relaxed">
               Con Tutela Impresa, anche <strong>il controllo più improvviso diventa un non-evento.</strong>
             </p>
