@@ -8,6 +8,7 @@ import TutelaImpresaSection from '../components/TutelaImpresaSection';
 import PricingCTASection from '../components/PricingCTASection';
 import VideoSection from '../components/VideoSection';
 import ContactFormSection from '../components/ContactFormSection';
+import SocialMediaSection from '../components/SocialMediaSection';
 import { Link } from 'react-router-dom';
 
 const Index = () => {
@@ -61,6 +62,7 @@ const Index = () => {
         <PricingCTASection />
         <VideoSection />
         <ContactFormSection />
+        <SocialMediaSection />
       </main>
 
       {/* Enhanced Footer */}
