@@ -79,11 +79,12 @@ const SocialMediaSection = () => {
               <div className="relative z-10 h-full flex flex-col justify-between p-6">
                 {/* Top Section - Logo and Platform Badge */}
                 <div className="flex justify-between items-start">
-                  <div className="w-12 h-12 bg-white rounded-xl p-2 shadow-lg">
+                  <div className="w-12 h-12 bg-white bg-opacity-90 rounded-lg p-1.5 shadow-lg border border-white border-opacity-20">
                     <img 
                       src={card.logoImage} 
                       alt="Ferrari Logo" 
                       className="w-full h-full object-contain"
+                      style={{ backgroundColor: 'transparent' }}
                     />
                   </div>
                   <div className="bg-white bg-opacity-90 backdrop-blur-sm px-3 py-1 rounded-full">
@@ -105,9 +106,9 @@ const SocialMediaSection = () => {
 
                   {/* CTA Button */}
                   <button className={`
-                    w-full ${card.buttonColor} text-white py-3 px-4 rounded-xl font-bold 
+                    ${card.buttonColor} text-white py-3 px-6 rounded-xl font-bold 
                     transition-all duration-300 transform hover:scale-105 hover:shadow-lg
-                    flex items-center justify-center space-x-2 text-sm
+                    inline-flex items-center space-x-2 text-sm w-auto
                   `}>
                     <span>{card.buttonText}</span>
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
