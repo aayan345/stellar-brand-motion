@@ -39,47 +39,47 @@ const SocialMediaSection = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-12 bg-gray-50">
       <div className="container mx-auto px-4">
         {/* Section Header */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center space-x-2 bg-brand-red bg-opacity-10 text-brand-red px-4 py-2 rounded-full text-sm font-semibold mb-6">
-            <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+        <div className="text-center mb-8">
+          <div className="inline-flex items-center space-x-2 bg-brand-red bg-opacity-10 text-brand-red px-4 py-2 rounded-full text-sm font-semibold mb-4">
+            <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
               <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
             </svg>
             <span>Seguici sui Social</span>
           </div>
 
-          <h2 className="text-4xl lg:text-5xl font-black text-gray-800 mb-4">
+          <h2 className="text-3xl lg:text-4xl font-black text-gray-800 mb-3">
             Resta sempre aggiornato
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
             Segui i nostri canali social per rimanere sempre informato su novità, 
             aggiornamenti e contenuti esclusivi di Tutela Impresa.
           </p>
         </div>
 
         {/* Social Cards Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
           {socialCards.map((card, index) => (
             <div
               key={card.id}
-              className="group relative h-56 bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:scale-105"
+              className="group relative h-44 bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]"
               style={{
                 backgroundImage: `url(${card.backgroundImage})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-                animationDelay: `${index * 150}ms`
+                animationDelay: `${index * 100}ms`
               }}
             >
               {/* Dark Overlay */}
               <div className="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-40 transition-all duration-300"></div>
               
               {/* Content Overlay */}
-              <div className="relative z-10 h-full flex flex-col justify-between p-6">
+              <div className="relative z-10 h-full flex flex-col justify-between p-4">
                 {/* Top Section - Logo and Platform Badge */}
                 <div className="flex justify-between items-start">
-                  <div className="w-12 h-12 bg-white bg-opacity-90 rounded-lg p-1.5 shadow-lg border border-white border-opacity-20">
+                  <div className="w-10 h-10 bg-white bg-opacity-90 rounded-lg p-1 shadow-md border border-white border-opacity-20">
                     <img 
                       src={card.logoImage} 
                       alt="Ferrari Logo" 
@@ -87,31 +87,31 @@ const SocialMediaSection = () => {
                       style={{ backgroundColor: 'transparent' }}
                     />
                   </div>
-                  <div className="bg-white bg-opacity-90 backdrop-blur-sm px-3 py-1 rounded-full">
-                    <span className="text-sm font-semibold text-gray-800">{card.platform}</span>
+                  <div className="bg-white bg-opacity-90 backdrop-blur-sm px-2 py-1 rounded-full">
+                    <span className="text-xs font-semibold text-gray-800">{card.platform}</span>
                   </div>
                 </div>
 
                 {/* Bottom Section - Text and Button */}
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-1">
+                  <h3 className="text-lg font-bold text-white mb-0.5">
                     {card.title}
                   </h3>
-                  <p className="text-gray-200 text-sm mb-1 font-medium">
+                  <p className="text-gray-200 text-xs mb-0.5 font-medium">
                     {card.subtitle}
                   </p>
-                  <p className="text-gray-300 text-sm mb-4">
+                  <p className="text-gray-300 text-xs mb-3">
                     {card.description}
                   </p>
 
                   {/* CTA Button */}
                   <button className={`
-                    ${card.buttonColor} text-white py-3 px-6 rounded-xl font-bold 
+                    ${card.buttonColor} text-white py-2 px-4 rounded-lg font-semibold text-xs
                     transition-all duration-300 transform hover:scale-105 hover:shadow-lg
-                    inline-flex items-center space-x-2 text-sm w-auto
+                    inline-flex items-center space-x-1.5 w-auto
                   `}>
                     <span>{card.buttonText}</span>
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
                   </button>
@@ -119,17 +119,17 @@ const SocialMediaSection = () => {
               </div>
 
               {/* Hover Effect Border */}
-              <div className="absolute inset-0 border-2 border-transparent group-hover:border-brand-red rounded-2xl transition-all duration-300 pointer-events-none"></div>
+              <div className="absolute inset-0 border-2 border-transparent group-hover:border-brand-red rounded-xl transition-all duration-300 pointer-events-none"></div>
             </div>
           ))}
         </div>
 
         {/* Bottom CTA */}
         <div className="text-center">
-          <p className="text-gray-600 mb-4">
+          <p className="text-gray-600 mb-3 text-sm">
             Vuoi rimanere sempre aggiornato sulle nostre novità?
           </p>
-          <button className="bg-gradient-to-r from-brand-red to-brand-red-light text-white px-8 py-3 rounded-xl font-bold hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+          <button className="bg-gradient-to-r from-brand-red to-brand-red-light text-white px-6 py-2.5 rounded-lg font-semibold text-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105">
             Iscriviti alla Newsletter
           </button>
         </div>
